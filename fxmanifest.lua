@@ -1,8 +1,10 @@
 fx_version 'cerulean'
 
-game 'gta5'
+game { 'gta5' }
 
-version '1.0'
+lua54 'yes'
+
+version '1.0.0'
 
 description 'PVP x Nafing Hud'
 
