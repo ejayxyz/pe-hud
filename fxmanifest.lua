@@ -6,11 +6,11 @@ lua54 'yes'
 
 version '1.0.0'
 
-description 'PVP x Nafing Hud'
+description 'Project Entity x Nafing Hud'
+
+client_script 'client/hud_cl.lua'
 
 ui_page 'html/ui.html'
-
-client_script 'client.lua'
 
 files {
 	'html/ui.html',
