@@ -8,9 +8,7 @@ description 'PVP x Nafing Hud'
 
 ui_page 'html/ui.html'
 
-client_scripts {
-	'client.lua'
-}
+client_script 'client.lua'
 
 files {
 	'html/ui.html',
