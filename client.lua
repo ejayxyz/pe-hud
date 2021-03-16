@@ -48,7 +48,7 @@ RegisterKeyMapping('hud', 'Mostrar/Ocultar HUD', 'keyboard', 'f7')
 
 RegisterNetEvent('pe-hud:hud')
 AddEventHandler('pe-hud:hud', function()
-	if showHUD == false and not isPaused then
+	if not showHUD and not isPaused then
 		SendNUIMessage({
 			action = 'showHide'
 		})
@@ -58,7 +58,7 @@ AddEventHandler('pe-hud:hud', function()
 		})
 		Citizen.Wait(300)
 		showHUD = true
-	elseif showHUD == true and not isPaused then
+	elseif showHUD and not isPaused then
 		SendNUIMessage({
 			action = 'showHide'
 		})
@@ -79,10 +79,10 @@ RegisterKeyMapping('map', 'Mostrar/Ocultar el mapa', 'keyboard', 'f10')
 
 RegisterNetEvent('pe-hud:map')
 AddEventHandler('pe-hud:map', function()
-	if showMAP == false and not isPaused then
+	if not showMAP and not isPaused then
 		DisplayRadar(false)
 		showMAP = true
-	elseif showMAP == true and not isPaused then
+	elseif showMAP and not isPaused then
 		DisplayRadar(true)
 		showMAP = false
 	end
