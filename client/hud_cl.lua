@@ -1,13 +1,12 @@
-local isPaused = false
-local showHUD = false
-local showMAP = false
+local isPaused, showHUD, showMAP = false, false, false
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(300)
-		if IsPedFatallyInjured(PlayerPedId()) then
-			local health = (GetEntityHealth(PlayerPedId()) - 201)
-			local armor = GetPedArmour(PlayerPedId())
+        local ped = PlayerPedId()
+		if IsPedFatallyInjured(ped) then
+			local health = (GetEntityHealth(ped) - 201)
+			local armor = GetPedArmour(ped)
 			local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
 			SendNUIMessage({action = "hud",
 						health = health,
@@ -15,8 +14,8 @@ Citizen.CreateThread(function()
 						stamina = stamina,
 			})
 		else
-			local health = (GetEntityHealth(PlayerPedId()) - 100)
-			local armor = GetPedArmour(PlayerPedId())
+			local health = GetEntityHealth(ped) - 100
+			local armor = GetPedArmour(ped)
 			local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
 			SendNUIMessage({action = "hud",
 						health = health,
@@ -25,12 +24,12 @@ Citizen.CreateThread(function()
 			})
 		end
 
-		if IsPauseMenuActive() and not isPaused and not showHUD then
+		if (IsPauseMenuActive() and not isPaused and not showHUD) then
 			isPaused = true
 			SendNUIMessage({
 				action = 'showHide'
 			})
-		elseif not IsPauseMenuActive() and isPaused then
+		elseif (not IsPauseMenuActive() and isPaused) then
 			isPaused = false
 			SendNUIMessage({
 				action = 'showHide'
@@ -40,15 +39,9 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterCommand('hud', function()
-	TriggerEvent('pe-hud:hud')
-end, false)
-
-RegisterKeyMapping('hud', 'Mostrar/Ocultar HUD', 'keyboard', 'f7')
-
 RegisterNetEvent('pe-hud:hud')
 AddEventHandler('pe-hud:hud', function()
-	if not showHUD and not isPaused then
+	if (not showHUD and not isPaused) then
 		SendNUIMessage({
 			action = 'showHide'
 		})
@@ -58,7 +51,7 @@ AddEventHandler('pe-hud:hud', function()
 		})
 		Citizen.Wait(300)
 		showHUD = true
-	elseif showHUD and not isPaused then
+	elseif (showHUD and not isPaused) then
 		SendNUIMessage({
 			action = 'showHide'
 		})
@@ -71,19 +64,25 @@ AddEventHandler('pe-hud:hud', function()
 	end
 end)
 
+RegisterNetEvent('pe-hud:map')
+AddEventHandler('pe-hud:map', function()
+	if (not showMAP and not isPaused) then
+		DisplayRadar(false)
+		showMAP = true
+	elseif (showMAP and not isPaused) then
+		DisplayRadar(true)
+		showMAP = false
+	end
+end)
+
+RegisterCommand('hud', function()
+	TriggerEvent('pe-hud:hud')
+end, false)
+
+RegisterKeyMapping('hud', 'Mostrar/Ocultar HUD', 'keyboard', 'f7')
+
 RegisterCommand('map', function()
 	TriggerEvent('pe-hud:map')
 end, false)
 
 RegisterKeyMapping('map', 'Mostrar/Ocultar el mapa', 'keyboard', 'f10')
-
-RegisterNetEvent('pe-hud:map')
-AddEventHandler('pe-hud:map', function()
-	if not showMAP and not isPaused then
-		DisplayRadar(false)
-		showMAP = true
-	elseif showMAP and not isPaused then
-		DisplayRadar(true)
-		showMAP = false
-	end
-end)
