@@ -13,9 +13,10 @@ Citizen.CreateThread(function()
 		local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
 		local armor, id = GetPedArmour(ped), GetPlayerServerId(PlayerId())
 		local minutes, hours =  GetClockMinutes(), GetClockHours()
+		local players = #GetActivePlayers() * 100 / Config.MaxPlayers
 		local time = {}
 		if minutes == 9 then
-			minutes = "0"
+			minutes = "0" .. minutes
 		end
 		time.hours = hours
 		time.minutes = minutes
@@ -27,7 +28,9 @@ Citizen.CreateThread(function()
 			stamina = stamina,
 			oxygen = oxygen,
 			id = id,
-			time = time.hours .. " : " .. time.minutes
+			players = players,
+			time = time.hours .. " : " .. time.minutes,
+			
 		})
 		Citizen.Wait(400)
 	end
@@ -43,6 +46,12 @@ RegisterNUICallback('change', function(data)
     TriggerEvent('PE:change', data.action)
 end)
 
+RegisterNUICallback('reset', function(data)
+	SendNUIMessage({action = 'test'})
+end)
+
+local mic = false
+
 RegisterNetEvent('PE:change')
 AddEventHandler('PE:change', function(action)
     if action == "health" then
@@ -56,11 +65,25 @@ AddEventHandler('PE:change', function(action)
 	elseif action == "id" then
 		SendNUIMessage({action = 'idT'})
 	elseif action == "map" then
-		mapToggle()
+		if not showMap then
+			showMap = true
+			DisplayRadar(true)
+		else
+			showMap = false
+			DisplayRadar(false)
+		end
 	elseif action == "movie" then
 		SendNUIMessage({action = 'movieT'})
 	elseif action == "time" then
 		SendNUIMessage({action = 'timeT'})
+	elseif action == "microphone" then
+		if not mic then
+			mic = true
+			SendNUIMessage({action = 'microphoneT'})
+		else
+			mic = false
+			SendNUIMessage({action = 'microphoneT'})
+		end
     end
 end)
 
@@ -73,34 +96,31 @@ end)
 
 RegisterKeyMapping('hud', 'Open the hud menu', 'keyboard', 'f7')
 
--- Functions
-function mapToggle()
-	if not showMap then
-		showMap = true
-		DisplayRadar(true)
-	else
-		showMap = false
-		DisplayRadar(false)
-	end
-end
-
-function gameTime()
-    hours = GetClockHours()
-    minutes = GetClockMinutes()
-    local time = {}
-
-    if minutes <= 9 then
-        minutes = "0" .. minutes
-    end
-
-    time.hours = hour
-    time.minutes = minute
-
-    return time
-end
-
 -- Handler
-
 AddEventHandler('playerSpawned', function(spawn)
 	DisplayRadar(false)
+end)
+
+
+local level = 33
+local microphone = level
+
+Citizen.CreateThread(function()
+	while true do
+		if IsControlPressed(0, 20) then
+			if microphone == 33 then
+				microphone = microphone + 33
+			elseif microphone == 66 then
+				microphone = microphone + 34
+			elseif microphone == 100 then
+				microphone = level
+			end
+		end
+
+		SendNUIMessage({
+			action = "microphone",
+			microphone = microphone
+		})
+		Citizen.Wait(100)
+	end
 end)

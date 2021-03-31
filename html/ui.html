@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="nui://pe-hud/html/css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <style>#drag-browser, #oxygen, #id, #movie, #time { display: none; }</style>
+   <!--<style>#drag-browser, #oxygen, #id, #movie, #time, #microphone { display: none; }</style> -->
+    <style> #movie { display: none; }</style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -15,9 +16,10 @@
         $( "#stamina" ).draggable();
         $( "#oxygen" ).draggable();
         $( "#id" ).draggable();
-        $( "#drag-browser" ).resizable();
+        $( "#time" ).draggable();
+        $( "#microphone" ).draggable();
         $( "#drag-browser" ).draggable();
-
+        $( "#drag-browser" ).resizable();
       } );
       </script>
 
@@ -32,7 +34,7 @@
       </svg>
 
       <svg class="circle" id="armor" width="60" height="60">
-        <circle class="progressplayer armor" stroke="#0ba5ce" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer armor" stroke="#3585DA" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/armor.png" height="17" width="17" x="16" y="27"></image>
       </svg>
 
@@ -44,12 +46,15 @@
         <circle class="progressplayer oxygen" stroke="rgb(5, 200, 201)" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/oxygen.png" height="18" width="18" x="15" y="27"></image>
       </svg>
-      <div>
+
+      <svg class="circle" id="microphone" width="60" height="60">
+        <circle class="progressplayer microphone" stroke="#FF871E" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <image href="img/microphone.png" height="18" width="18" x="15" y="27"></image>
+      </svg>
         <svg class="circle" id="id" width="60" height="60">
           <circle class="progressplayer id" stroke="#ccc" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
-          <text class="idnumber" x="19" y="42" font-family="Verdana" font-size="35" fill="white">2</text>
+          <text class="idnumber" >001</text>
         </svg>
-      </div>
     </div>
 
     <div class="browser-window-osx" id="drag-browser">

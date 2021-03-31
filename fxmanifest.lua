@@ -8,7 +8,10 @@ version '1.0.0'
 
 description 'Project Entity'
 
-client_script 'client/hud_cl.lua'
+client_scripts {
+	'config.lua',
+	'client/hud_cl.lua'
+}
 
 ui_page 'html/ui.html'
 

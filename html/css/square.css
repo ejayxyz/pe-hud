@@ -12,48 +12,86 @@
 .imageleft2 {
   float:left;
   position: relative;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .imageleft3 {
   float:left;
   position: relative;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .buttonleft {
   float:left;
   position: relative;
   margin-top: 15px;
-  margin-left: 4vw;
+  margin-left: 2vw;
 }
 
 .buttonleft2 {
   float:left;
   position: relative;
-  margin-left: 4vw;
-  margin-top: 30px;
+  margin-top: 15px;
+  margin-left: 2vw;
 }
 
 .buttonleft3 {
   float:left;
   position: relative;
-  margin-left: 4vw;
-  margin-top: 30px;
-}
+  margin-top: 15px;
+  margin-left: 2vw;
 
+}
 .imagecenter {
   position: absolute;
   margin-top: 15px;
-  margin-left: 7vw;
+  margin-left: 21vw;
+}
+.imagecenter2 {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 21vw;
+}
+.imagecenter3 {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 21vw;
 }
 .buttoncenter {
   position: absolute;
-  margin-left: 17vw;
+  margin-left: 28vw;
+  margin-top: 15px;
+}
+
+.buttoncenter2 {
+  position: absolute;
+  margin-left: 28vw;
+  margin-top: 15px;
+}
+
+.buttoncenter3 {
+  position: absolute;
+  margin-left: 28vw;
   margin-top: 15px;
 }
 
 .imageright {
+  float:right;
+  position: relative;
+  margin-top: 15px;
+  margin-right: 2vw;
+
+}
+
+.imageright2 {
+  float:right;
+  position: relative;
+  margin-top: 15px;
+  margin-right: 2vw;
+
+}
+
+.imageright3 {
   float:right;
   position: relative;
   margin-top: 15px;
@@ -66,7 +104,21 @@
   position: relative;
   margin-top: 15px;
 }
-    
+
+
+.buttonright2 {
+  float:right;
+  position: relative;
+  margin-top: 15px;
+}
+
+
+.buttonright3 {
+  float:right;
+  position: relative;
+  margin-top: 15px;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -131,5 +183,4 @@ input:checked + .slider:before {
   background-color: #ccc;
   width: 430px;
 }
-
 
