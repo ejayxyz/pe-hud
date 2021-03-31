@@ -3,6 +3,40 @@ background-color: black;
 
 }
 
+.imageleft {
+float:left;
+position: relative;
+margin-top: 15px;
+}
+
+.imageleft2 {
+    float:left;
+    position: relative;
+    margin-top: 30px;
+}
+
+.imageleft3 {
+    float:left;
+    position: relative;
+    margin-top: 30px;
+}
+
+.buttonleft {
+margin-left: 4vw;
+}
+
+.buttonleft2 {
+    margin-left: 4vw;
+    margin-top: 30px;
+}
+
+.buttonleft3 {
+    margin-left: 4vw;
+    margin-top: 30px;
+}
+    
+
+
 .switch {
   position: relative;
   display: inline-block;
@@ -41,7 +75,7 @@ background-color: black;
 }
 
 input:checked + .slider {
-  background-color: #4b4b4b;
+  background-color: #7c7c7c;
 }
 
 input:focus + .slider {
@@ -56,9 +90,17 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 24px;
 }
 
 .slider.round:before {
   border-radius: 50%;
 }
+
+.resetselect {
+background-color: #ccc;
+width: 430px;
+
+}
+
+
