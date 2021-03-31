@@ -1,78 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#health" ).draggable();
+        $( "#armor" ).draggable();
+        $( "#stamina" ).draggable();
+        $( "#drag-browser" ).draggable();
+      } );
+      </script>
+
   </head>
   <body>
     <div class="main">
-      <svg class="circle" width="60" height="60">
-        <circle
-          class="progressplayer health"
-          stroke="#92E200"
-          stroke-width="4.5"
-          style="stroke-opacity: 1.0"
-          fill="#000000"
-          r="20"
-          cx="24"
-          cy="24"
-          stroke-dasharray="70 30"
-          stroke-dashoffset="0"
-        />
-        <image
-          href="img/health.png"
-          height="17"
-          width="17"
-          x="16"
-          y="27"
-        ></image>
+      <svg class="circle" id="health" width="60" height="60">
+        <circle class="progressplayer health" stroke="#92E200" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <image href="img/health.png" height="17" width="17" x="16" y="27"></image>
       </svg>
 
-      <svg class="circle" width="60" height="60">
-        <circle
-          class="progressplayer armor"
-          stroke="#0ba5ce"
-          stroke-width="4.5"
-          style="stroke-opacity: 1.0"
-          fill="#000000"
-          r="20"
-          cx="24"
-          cy="24"
-          stroke-dasharray="70 30"
-          stroke-dashoffset="0"
-        />
-        <image
-          href="img/armor.png"
-          height="17"
-          width="17"
-          x="16"
-          y="27"
-        ></image>
+      <svg class="circle" id="armor" width="60" height="60">
+        <circle class="progressplayer armor" stroke="#0ba5ce" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <image href="img/armor.png" height="17" width="17" x="16" y="27"></image>
       </svg>
 
-      <svg class="circle" width="60" height="60">
-        <circle
-          class="progressplayer stamina"
-          stroke="#FFC300"
-          stroke-width="4.5"
-          style="stroke-opacity: 1.0"
-          fill="#000000"
-          r="20"
-          cx="24"
-          cy="24"
-          stroke-dasharray="70 30"
-          stroke-dashoffset="0"
-        />
-        <image
-          href="img/stamina.png"
-          height="18"
-          width="18"
-          x="15"
-          y="27"
+      <svg class="circle" id="stamina" width="60" height="60">
+        <circle class="progressplayer stamina" stroke="#FFC300" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <image href="img/stamina.png" height="18" width="18" x="15" y="27"
         ></image>
       </svg>
     </div>
+
+    <div class="browser-window-osx" id="drag-browser">
+        <div class="header">
+            <div class="menu">
+                <span id="close" class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize" id="reset"></span>
+            </div>
+        </div>
+        <div class="window">
+            <iframe src="square.html"></iframe>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>

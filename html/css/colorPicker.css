@@ -1,0 +1,49 @@
+.colorPickerPane{
+	display:inline-block;
+	background: -webkit-linear-gradient(white, black); 
+	background: -o-linear-gradient(white, black);
+	background: -moz-linear-gradient(white, black);
+	background: linear-gradient(white, black);
+	position:absolute;
+	height:202px;
+}
+.colorPickerPane .Lightness{
+	margin:0;
+	padding:0;
+	width:13px;
+	height:202px;
+}
+input[type=range].vertical{
+	writing-mode: bt-lr; /* IE */
+	-webkit-appearance: slider-vertical; /* WebKit */
+}
+.HueSaturationWrapper{
+	display:inline-block;
+	margin:0;
+	padding:0;
+	border:0;
+	height:202px;
+}
+
+.colorPicker{
+	width:32px;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAkCAYAAABrLwHZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB/SURBVEhL7dXRCoAgDAXQrW/zv/w5/6u6MR/SbTbwoYcdkMLgciVRPm+0ySHPLTIsLsPiMixODWutETObA99VOII0tVYcTdPAvMVcZilF3t6s+YeEqsZ2Xitwf8DYwm0FEmrq7VatYLk1eptlK5BQ15dWkLdTXIbFZVjcX8OILlrUGybgjf00AAAAAElFTkSuQmCC');
+	background-repeat: no-repeat;
+	background-position: right center;
+	color:transparent;	
+	outline: 1px solid silver;
+	cursor: pointer;
+}
+
+.colorPicker::-moz-selection {
+	background-color: transparent;
+	display:none;
+}
+.colorPicker::-webkit-selection {
+	background-color: transparent;
+	display:none;
+}
+.colorPicker::selection {
+	background-color: transparent;
+	display:none;
+}
