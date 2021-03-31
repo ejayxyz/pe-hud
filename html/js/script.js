@@ -4,6 +4,7 @@
       progress(event.data.health, ".health");
       progress(event.data.armor, ".armor");
       progress(event.data.stamina, ".stamina");
+      $(".idnumber").text(event.data.id)
     break;
     
     case "healthT":
@@ -18,15 +19,15 @@
       $("#stamina").fadeToggle();
     break;
 
-    case "show":
-      $("body").fadeIn();
-    break;
   }
 });
 
 $("#health-switch").click(function() { $.post('https://pe-hud/change', JSON.stringify({action: 'health'})); return;})
 $("#armor-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'armor'})); return;})
 $("#stamina-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'stamina'})); return;})
+$("#map-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'map'})), console.log("TEST");})
+$("#close").click(function() {$.post('https://pe-hud/close'), console.log("TEST")})
+
 
 function progress(percent, element) {
   const circle = document.querySelector(element);

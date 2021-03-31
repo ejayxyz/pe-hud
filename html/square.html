@@ -2,6 +2,7 @@
 <html>
   <head>
         <link rel="stylesheet" href="./css/square.css">
+        <link rel="stylesheet" href="nui://pe-hud/html/css/square.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
         <link rel="stylesheet" href="./css/colorPicker.css"/>
@@ -24,38 +25,40 @@
             <span class="slider round"></span>
         </label>
           
-        <img class=""  src="./img/map.png" alt="Image did not load correctly" width="30px" height="30px">
+        <img class="imagecenter"  src="./img/armor.png" alt="Image did not load correctly" width="30px" height="30px">
 
-        <label class="switch" >
+        <label class="switch buttoncenter" >
             <input type="checkbox" id="armor-switch" checked>
             <span class="slider round"></span>
         </label>
 
-        <img src="./img/stamina.png" alt="Image did not load correctly" width="30px" height="30px">
-
-        <label class="switch" >
+        <label class="switch buttonright" >
             <input type="checkbox" id="stamina-switch" checked>
             <span class="slider round"></span>
-        </label><br><br>
+
+        </label>
         
-        <img class="imageleft2" src="./img/armor.png" alt="Image did not load correctly" width="30px" height="30px">
+        <img class="imageright"  src="./img/stamina.png" alt="Image did not load correctly" width="30px" height="30px">
+        <br><br>
+        
+        <img class="imageleft2" src="./img/map.png" alt="Image did not load correctly" width="30px" height="30px">
 
         <label class="switch buttonleft2" >
-            <input type="checkbox" id="armor-switch" checked>
+            <input type="checkbox" id="map-switch" checked>
             <span class="slider round"></span>
         </label>
 
         <img src="./img/id.png" alt="Image did not load correctly" width="30px" height="30px">
 
         <label class="switch" >
-            <input type="checkbox" id="armor-switch" checked>
+            <input type="checkbox" id="id-switch" checked>
             <span class="slider round"></span>
         </label>
         
         <img src="./img/oxygen.png" alt="Image did not load correctly" width="30px" height="30px">
 
         <label class="switch" >
-            <input type="checkbox" id="armor-switch" checked>
+            <input type="checkbox" id="oxygen-switch" checked>
             <span class="slider round"></span>
         </label><br><br>
 
@@ -63,26 +66,32 @@
         
 
         <label class="switch buttonleft3" >
-            <input type="checkbox" id="armor-switch" checked>
+            <input type="checkbox" id="movie-switch" checked>
             <span class="slider round"></span>
         </label>
         
         <img class="" src="./img/time.png" alt="Image did not load correctly" width="30px" height="30px">
 
         <label class="switch" >
-            <input type="checkbox" id="armor-switch" checked>
+            <input type="checkbox" id="time-switch" checked>
+            <span class="slider round"></span>
+        </label>
+
+        <img class="" src="./img/microphone.png" alt="Image did not load correctly" width="30px" height="30px">
+
+        <label class="switch" >
+            <input type="checkbox" id="microphone-switch" checked>
             <span class="slider round"></span>
         </label><br><br>
 
-        <button type="button" class="resetselect">Reset</button>
+        <button type="button" class="resetselect" id="reset">Reset</button>
 
 
 
 
 
-
-        <script type="text/javascript" src="./js/colorPicker.js"></script>
         <script type="text/javascript" src="./js/script.js"></script>
+        <script type="text/javascript" src="./js/colorPicker.js"></script>
     </body>
 
 

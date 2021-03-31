@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="nui://pe-hud/html/css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -11,13 +12,18 @@
         $( "#health" ).draggable();
         $( "#armor" ).draggable();
         $( "#stamina" ).draggable();
+        $( "#id" ).draggable();
+        $( "#drag-browser" ).resizable();
         $( "#drag-browser" ).draggable();
+
       } );
       </script>
 
   </head>
   <body>
-    <div class="main">
+
+
+    <div class="main" id="main">
       <svg class="circle" id="health" width="60" height="60">
         <circle class="progressplayer health" stroke="#92E200" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/health.png" height="17" width="17" x="16" y="27"></image>
@@ -30,9 +36,16 @@
 
       <svg class="circle" id="stamina" width="60" height="60">
         <circle class="progressplayer stamina" stroke="#FFC300" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
-        <image href="img/stamina.png" height="18" width="18" x="15" y="27"
-        ></image>
+        <image href="img/stamina.png" height="18" width="18" x="15" y="27"></image>
       </svg>
+      <div id="id">
+        <svg class="circle" id="id" width="60" height="60">
+          <circle class="progressplayer id" stroke="#0ba5ce" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+          <p class="idnumber">
+            <span>75</span>
+          </p>
+        </svg>
+      </div>
     </div>
 
     <div class="browser-window-osx" id="drag-browser">

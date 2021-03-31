@@ -1,38 +1,70 @@
 .background {
-background-color: black;
+  background-color: black;
 
 }
 
 .imageleft {
-float:left;
-position: relative;
-margin-top: 15px;
+  float:left;
+  position: relative;
+  margin-top: 15px;
 }
 
 .imageleft2 {
-    float:left;
-    position: relative;
-    margin-top: 30px;
+  float:left;
+  position: relative;
+  margin-top: 30px;
 }
 
 .imageleft3 {
-    float:left;
-    position: relative;
-    margin-top: 30px;
+  float:left;
+  position: relative;
+  margin-top: 30px;
 }
 
 .buttonleft {
-margin-left: 4vw;
+  float:left;
+  position: relative;
+  margin-top: 15px;
+  margin-left: 4vw;
 }
 
 .buttonleft2 {
-    margin-left: 4vw;
-    margin-top: 30px;
+  float:left;
+  position: relative;
+  margin-left: 4vw;
+  margin-top: 30px;
 }
 
 .buttonleft3 {
-    margin-left: 4vw;
-    margin-top: 30px;
+  float:left;
+  position: relative;
+  margin-left: 4vw;
+  margin-top: 30px;
+}
+
+.imagecenter {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 7vw;
+}
+.buttoncenter {
+  position: absolute;
+  margin-left: 17vw;
+  margin-top: 15px;
+}
+
+.imageright {
+  float:right;
+  position: relative;
+  margin-top: 15px;
+  margin-right: 2vw;
+
+}
+
+.buttonright {
+  float:right;
+  position: relative;
+  margin-top: 15px;
 }
     
 
@@ -98,9 +130,8 @@ input:checked + .slider:before {
 }
 
 .resetselect {
-background-color: #ccc;
-width: 430px;
-
+  background-color: #ccc;
+  width: 430px;
 }
 
 
