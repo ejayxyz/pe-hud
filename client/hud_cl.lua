@@ -1,5 +1,6 @@
+local showMap, showBars = false, false
 
-
+-- Main Thread
 Citizen.CreateThread(function()
 	while true do
         local ped, health = PlayerPedId(), nil
@@ -8,22 +9,17 @@ Citizen.CreateThread(function()
 		else
 			health = GetEntityHealth(ped) - 100
 		end
-
-		local stamina = nil
-		if IsEntityInWater(ped) and IsPedSwimming(ped) then
-			stamina = 10 * GetPlayerUnderwaterTimeRemaining(PlayerId())
-			if stamina <= 0 then
-				stamina = 0
-			end
-		else
-			stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
+		local oxygen = 10 * GetPlayerUnderwaterTimeRemaining(PlayerId())
+		local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
+		local armor, id = GetPedArmour(ped), GetPlayerServerId(PlayerId())
+		local minutes, hours =  GetClockMinutes(), GetClockHours()
+		local time = {}
+		if minutes == 9 then
+			minutes = "0"
 		end
+		time.hours = hours
+		time.minutes = minutes
 
-		print(stamina)		
-
-		local armor = GetPedArmour(ped)
-
-		local id = GetPlayerServerId(PlayerId())
 		SendNUIMessage({
 			action = "hud",
 			health = health,
@@ -31,44 +27,15 @@ Citizen.CreateThread(function()
 			stamina = stamina,
 			oxygen = oxygen,
 			id = id,
+			time = time.hours .. " : " .. time.minutes
 		})
 		Citizen.Wait(400)
 	end
 end)
 
---[[Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(300)
-        local ped = PlayerPedId()
-		if IsEntityDead(ped) then
-			local health = (GetEntityHealth(ped) - 201)
-			local armor = GetPedArmour(ped)
-			local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
-			local id = GetPlayerServerId(PlayerId())
-			SendNUIMessage({
-                action = "hud",
-                health = health,
-                armor = armor,
-                stamina = stamina,
-				id = id,
-			})
-		else
-			local health = GetEntityHealth(ped) - 100
-			local armor = GetPedArmour(ped)
-			local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
-			local id = GetPlayerServerId(PlayerId())
-			SendNUIMessage({
-                action = "hud",
-                health = health,
-                armor = armor,
-                stamina = stamina,
-				id = id,
-			})
-		end
-	end
-end)]]
-
+-- NUI + Events
 RegisterNUICallback('close', function(data)
+	SendNUIMessage({ action = 'hide' })
 	SetNuiFocus(false, false)
 end)
 
@@ -84,24 +51,56 @@ AddEventHandler('PE:change', function(action)
 		SendNUIMessage({action = 'armorT'})
     elseif action == "stamina" then
 		SendNUIMessage({action = 'staminaT'})
+	elseif action == "oxygen" then
+		SendNUIMessage({action = 'oxygenT'})
+	elseif action == "id" then
+		SendNUIMessage({action = 'idT'})
 	elseif action == "map" then
 		mapToggle()
+	elseif action == "movie" then
+		SendNUIMessage({action = 'movieT'})
+	elseif action == "time" then
+		SendNUIMessage({action = 'timeT'})
     end
 end)
 
 
-
+-- Opening Menu
 RegisterCommand('hud', function()
+	SendNUIMessage({ action = 'show' })
     SetNuiFocus(true, true)
 end)
+
+RegisterKeyMapping('hud', 'Open the hud menu', 'keyboard', 'f7')
 
 -- Functions
 function mapToggle()
 	if not showMap then
 		showMap = true
-		DisplayRadar(false)
+		DisplayRadar(true)
 	else
 		showMap = false
-		DisplayRadar(true)
+		DisplayRadar(false)
 	end
 end
+
+function gameTime()
+    hours = GetClockHours()
+    minutes = GetClockMinutes()
+    local time = {}
+
+    if minutes <= 9 then
+        minutes = "0" .. minutes
+    end
+
+    time.hours = hour
+    time.minutes = minute
+
+    return time
+end
+
+-- Handler
+
+AddEventHandler('playerSpawned', function(spawn)
+	DisplayRadar(false)
+end)

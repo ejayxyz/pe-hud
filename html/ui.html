@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="nui://pe-hud/html/css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>#drag-browser, #oxygen, #id, #movie, #time { display: none; }</style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -12,6 +13,7 @@
         $( "#health" ).draggable();
         $( "#armor" ).draggable();
         $( "#stamina" ).draggable();
+        $( "#oxygen" ).draggable();
         $( "#id" ).draggable();
         $( "#drag-browser" ).resizable();
         $( "#drag-browser" ).draggable();
@@ -21,7 +23,7 @@
 
   </head>
   <body>
-
+    <text class="time" id="time" x="19" y="42" font-family="Verdana" font-size="35" fill="white">10:20</text>
 
     <div class="main" id="main">
       <svg class="circle" id="health" width="60" height="60">
@@ -38,12 +40,14 @@
         <circle class="progressplayer stamina" stroke="#FFC300" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/stamina.png" height="18" width="18" x="15" y="27"></image>
       </svg>
-      <div id="id">
+      <svg class="circle" id="oxygen" width="60" height="60">
+        <circle class="progressplayer oxygen" stroke="rgb(5, 200, 201)" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <image href="img/oxygen.png" height="18" width="18" x="15" y="27"></image>
+      </svg>
+      <div>
         <svg class="circle" id="id" width="60" height="60">
-          <circle class="progressplayer id" stroke="#0ba5ce" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
-          <p class="idnumber">
-            <span>75</span>
-          </p>
+          <circle class="progressplayer id" stroke="#ccc" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+          <text class="idnumber" x="19" y="42" font-family="Verdana" font-size="35" fill="white">2</text>
         </svg>
       </div>
     </div>
@@ -60,6 +64,11 @@
             <iframe src="square.html"></iframe>
         </div>
     </div>
+    <div id="movie">
+      <div id="top"></div>
+      <div id="bottom"></div>
+    </div>
+  </div>
     <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>
