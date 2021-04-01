@@ -135,10 +135,12 @@
 }
 
 .time {
+  position: relative;
   font-size: 30px;
   font-family: Kum;
   color:whitesmoke;
   overflow:none;
+
 }
 
 .top{

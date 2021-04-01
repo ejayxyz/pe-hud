@@ -18,6 +18,7 @@ ui_page 'html/ui.html'
 files {
 	'html/*.html',
 	'html/css/*.css',
+	'html/fonts/*.ttf',
 	'html/js/*.js',
 	'html/img/*.png',
 }
