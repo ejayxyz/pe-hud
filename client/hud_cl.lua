@@ -1,4 +1,6 @@
 local showMap, showBars = false, false
+local whisper, normal, scream = 33, 66, 100 
+local microphone = normal
 
 -- Main Thread
 Citizen.CreateThread(function()
@@ -15,12 +17,11 @@ Citizen.CreateThread(function()
 		local minutes, hours =  GetClockMinutes(), GetClockHours()
 		local players = #GetActivePlayers() * 100 / Config.MaxPlayers
 		local time = {}
-		if minutes == 9 then
+		if minutes <= 9 then
 			minutes = "0" .. minutes
 		end
 		time.hours = hours
 		time.minutes = minutes
-
 		SendNUIMessage({
 			action = "hud",
 			health = health,
@@ -50,8 +51,6 @@ RegisterNUICallback('reset', function(data)
 	SendNUIMessage({action = 'test'})
 end)
 
-local mic = false
-
 RegisterNetEvent('PE:change')
 AddEventHandler('PE:change', function(action)
     if action == "health" then
@@ -77,13 +76,7 @@ AddEventHandler('PE:change', function(action)
 	elseif action == "time" then
 		SendNUIMessage({action = 'timeT'})
 	elseif action == "microphone" then
-		if not mic then
-			mic = true
-			SendNUIMessage({action = 'microphoneT'})
-		else
-			mic = false
-			SendNUIMessage({action = 'microphoneT'})
-		end
+		SendNUIMessage({action = 'microphoneT'})
     end
 end)
 
@@ -96,31 +89,32 @@ end)
 
 RegisterKeyMapping('hud', 'Open the hud menu', 'keyboard', 'f7')
 
+RegisterCommand('-levelVoice', function()
+	if microphone == 33 then
+		microphone = normal
+		SendNUIMessage({
+			action = "microphone",
+			microphone = microphone
+		})
+	elseif microphone == 66 then
+		microphone = scream
+		SendNUIMessage({
+			action = "microphone",
+			microphone = microphone
+		})
+	elseif microphone == 100 then
+		microphone = whisper
+		SendNUIMessage({
+			action = "microphone",
+			microphone = microphone
+		})
+	end
+end)
+
+RegisterKeyMapping('-levelVoice', '', 'keyboard', Config.VoiceChange)
+
 -- Handler
 AddEventHandler('playerSpawned', function(spawn)
 	DisplayRadar(false)
 end)
 
-
-local level = 33
-local microphone = level
-
-Citizen.CreateThread(function()
-	while true do
-		if IsControlPressed(0, 20) then
-			if microphone == 33 then
-				microphone = microphone + 33
-			elseif microphone == 66 then
-				microphone = microphone + 34
-			elseif microphone == 100 then
-				microphone = level
-			end
-		end
-
-		SendNUIMessage({
-			action = "microphone",
-			microphone = microphone
-		})
-		Citizen.Wait(100)
-	end
-end)
