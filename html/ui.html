@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="nui://pe-hud/html/css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-   <!--<style>#drag-browser, #oxygen, #id, #movie, #time, #microphone { display: none; }</style> -->
+   <style>#drag-browser, #oxygen, #movie, #id, #time, #microphone { display: none; overflow: hidden; }
+  </style>
     <style> #movie { display: none; }</style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -22,14 +23,15 @@
         $( "#drag-browser" ).resizable();
       } );
       </script>
-
   </head>
   <body>
-    <text class="time" id="time" x="19" y="42" font-family="Verdana" font-size="35" fill="white">10:20</text>
+    <div class="time-a">
+        <text class="time" id="time">10:20</text>
+    </div>
 
     <div class="main" id="main">
       <svg class="circle" id="health" width="60" height="60">
-        <circle class="progressplayer health" stroke="#92E200" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer health" stroke="#9DE112" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/health.png" height="17" width="17" x="16" y="27"></image>
       </svg>
 
@@ -39,11 +41,11 @@
       </svg>
 
       <svg class="circle" id="stamina" width="60" height="60">
-        <circle class="progressplayer stamina" stroke="#FFC300" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer stamina" stroke="#FFC100" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/stamina.png" height="18" width="18" x="15" y="27"></image>
       </svg>
       <svg class="circle" id="oxygen" width="60" height="60">
-        <circle class="progressplayer oxygen" stroke="rgb(5, 200, 201)" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer oxygen" stroke="#A636ED" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/oxygen.png" height="18" width="18" x="15" y="27"></image>
       </svg>
 
@@ -52,9 +54,12 @@
         <image href="img/microphone.png" height="18" width="18" x="15" y="27"></image>
       </svg>
         <svg class="circle" id="id" width="60" height="60">
-          <circle class="progressplayer id" stroke="#ccc" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
-          <text class="idnumber" >001</text>
+
+          <circle class="progressplayer id" stroke="#FF0046" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+          <text class="idnumber" x="24" y="37" dominant-baseline="middle" text-anchor="middle">123</text>
         </svg>
+
+
     </div>
 
     <div class="browser-window-osx" id="drag-browser">
@@ -70,8 +75,8 @@
         </div>
     </div>
     <div id="movie">
-      <div id="top"></div>
-      <div id="bottom"></div>
+      <div class="top" id="top"></div>
+      <div class="bottom" id="bottom"></div>
     </div>
   </div>
     <script type="text/javascript" src="./js/script.js"></script>
