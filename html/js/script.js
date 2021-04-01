@@ -1,4 +1,4 @@
-﻿window.addEventListener("message", function (event) {
+window.addEventListener("message", function (event) {
   switch (event.data.action) {
     case "show":
       $("#drag-browser").fadeIn();
@@ -53,6 +53,11 @@
     });;
 
     $("#time").animate({
+      top: "0px",
+      left: "0px"
+    });;
+
+    $("#microphone").animate({
       top: "0px",
       left: "0px"
     });;
