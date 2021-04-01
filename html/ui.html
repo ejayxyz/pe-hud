@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="nui://pe-hud/html/css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-   <style>#drag-browser, #oxygen, #movie, #id, #time, #microphone { display: none; overflow: hidden; }
-  </style>
+
+   <!--<style>#drag-browser, #oxygen, #movie, #id, #time, #microphone { display: none; overflow: hidden; }   </style>-->
+
     <style> #movie { display: none; }</style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -20,13 +21,12 @@
         $( "#time" ).draggable();
         $( "#microphone" ).draggable();
         $( "#drag-browser" ).draggable();
-        $( "#drag-browser" ).resizable();
       } );
       </script>
   </head>
   <body>
     <div class="time-a">
-        <text class="time" id="time">10:20</text>
+      <text class="time" id="time">10:20</text>
     </div>
 
     <div class="main" id="main">
@@ -50,16 +50,13 @@
       </svg>
 
       <svg class="circle" id="microphone" width="60" height="60">
-        <circle class="progressplayer microphone" stroke="#FF871E" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer microphone" stroke="#ff6f00" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/microphone.png" height="18" width="18" x="15" y="27"></image>
       </svg>
         <svg class="circle" id="id" width="60" height="60">
-
           <circle class="progressplayer id" stroke="#FF0046" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
           <text class="idnumber" x="24" y="37" dominant-baseline="middle" text-anchor="middle">123</text>
         </svg>
-
-
     </div>
 
     <div class="browser-window-osx" id="drag-browser">
@@ -72,6 +69,7 @@
         </div>
         <div class="window">
             <iframe src="square.html"></iframe>
+
         </div>
     </div>
     <div id="movie">

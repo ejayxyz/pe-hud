@@ -1,4 +1,4 @@
-local showMap, showBars = false, false
+local showMap, showBars, isOpen = false, false, false
 local whisper, normal, scream = 33, 66, 100 
 local microphone = normal
 
@@ -41,6 +41,7 @@ end)
 RegisterNUICallback('close', function(data)
 	SendNUIMessage({ action = 'hide' })
 	SetNuiFocus(false, false)
+	isOpen = false
 end)
 
 RegisterNUICallback('change', function(data)
@@ -83,13 +84,16 @@ end)
 
 -- Opening Menu
 RegisterCommand('hud', function()
-	SendNUIMessage({ action = 'show' })
-    SetNuiFocus(true, true)
+	if not isOpen then
+		isOpen = true
+		SendNUIMessage({ action = 'show' })
+		SetNuiFocus(true, true)
+	end
 end)
 
 RegisterKeyMapping('hud', 'Open the hud menu', 'keyboard', 'f7')
 
-RegisterCommand('-levelVoice', function()
+RegisterCommand('+levelVoice', function()
 	if microphone == 33 then
 		microphone = normal
 		SendNUIMessage({
@@ -111,10 +115,18 @@ RegisterCommand('-levelVoice', function()
 	end
 end)
 
-RegisterKeyMapping('-levelVoice', '', 'keyboard', Config.VoiceChange)
+RegisterKeyMapping('+levelVoice', 'Do not use', 'keyboard', Config.VoiceChange)
 
 -- Handler
 AddEventHandler('playerSpawned', function(spawn)
 	DisplayRadar(false)
+end)
+
+Citizen.CreateThread(function()
+    while isOpen do
+        Citizen.Wait(100)
+        DisableControlAction(0, 322, true)
+		DisableControlAction(0, 168, true)
+    end
 end)
 

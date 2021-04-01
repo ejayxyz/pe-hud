@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Kum;
+  src: url('../fonts/KumbhSans-Bold.ttf');
+}
+
 .background {
   background-color: black;
 
@@ -139,7 +144,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(224, 57, 57);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -157,7 +162,7 @@
 }
 
 input:checked + .slider {
-  background-color: #7c7c7c;
+  background-color: rgb(134, 196, 41);
 }
 
 input:focus + .slider {
@@ -178,9 +183,74 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
+/* 
 .resetselect {
-  background-color: #ccc;
-  width: 430px;
+  color:#fff;
+  border:1px solid #fff;
+  transition:.2s all;
+  overflow:hidden;
+  font-weight:bold;
+
+  width:150px;
+  height:50px;
+  font-size:16px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  cursor:pointer;
 }
 
+.resetselect:hover{
+  color:#000000;
+  background:#fff;
+}
+*/
+div .button{
+  width:150px;
+  height:50px;
+  font-size:16px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  cursor:pointer;
+  border-radius: 4px;
+
+}
+
+.button{
+  font-family: Kum;
+  color:#fff;
+  border:1px solid #fff;
+  transition:.2s all;
+  overflow:hidden;
+  font-weight:bold;
+  background:rgb(134, 196, 41);
+}
+.button:hover{
+  color:#fff;
+  background:rgb(224, 57, 57);
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after{
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}

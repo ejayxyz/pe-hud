@@ -20,5 +20,7 @@ files {
 	'html/css/*.css',
 	'html/fonts/*.ttf',
 	'html/js/*.js',
+	'html/js/colorpicker/*.js',
+	'html/images/*.png',
 	'html/img/*.png',
 }

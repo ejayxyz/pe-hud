@@ -94,6 +94,7 @@ window.addEventListener("message", function (event) {
   }
 });
 
+
 $("#health-switch").click(function() { $.post('https://pe-hud/change', JSON.stringify({action: 'health'}));})
 $("#armor-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'armor'}));})
 $("#stamina-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'stamina'}));})
@@ -105,6 +106,12 @@ $("#time-switch").click(function() {$.post('https://pe-hud/change', JSON.stringi
 $("#microphone-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'microphone'}))})
 $("#close").click(function() {$.post('https://pe-hud/close')})
 $("#reset").click(function() {$.post('https://pe-hud/reset')})
+
+document.onkeyup = function (data) {
+  if (data.which == 27) {
+      $.post('https://pe-hud/close');
+  }
+};
 
 function progress(percent, element) {
   const circle = document.querySelector(element);
