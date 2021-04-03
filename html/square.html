@@ -8,19 +8,14 @@
         <link rel="stylesheet" href="./css/colorpicker.css"/>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="./js/colorpicker/colorpicker.js"></script>
-        <script type="text/javascript" src="./js/colorpicker/jquery.js"></script>
-        <script type="text/javascript" src="./js/colorpicker/colorpicker.js"></script>
-        <script type="text/javascript" src="./js/colorpicker/eye.js"></script>
-        <script type="text/javascript" src="./js/colorpicker/utils.js"></script>
-        <script type="text/javascript" src="./js/colorpicker/layout.js?ver=1.0.2"></script>
+        <script type="text/javascript" src="./js/jquery.wheelcolorpicker.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.wheelcolorpicker.js"></script>
+        <link type="text/css" rel="stylesheet" href="./css/wheelcolorpicker.dark.css" />
 
 
     </head>
 
-    <body class="background" height="900px">
-        
-
+    <body class="background" id="hola" height="900px">
         <image  class="imageleft" id="helpme"src="./img/health.png" alt="Image did not load correctly" width="30px" height="30px" >
 
         <label class="switch buttonleft" >
@@ -95,15 +90,48 @@
         
         </div>
 
-        <p><input type="text" maxlength="6" size="6" id="colorpickerField2" value="ff0000" /></p>
+        <p>
+            <input id="color-block" type="text" value="#ff8800" data-wheelcolorpicker="" data-wcp-format="css" data-wcp-layout="block" data-wcp-sliders="wsvap" data-wcp-cssclass="color-block" data-wcp-autoresize="false">
+        </p>
+      
+        <style type="text/css">
+        .color-block {
+            max-width: 340px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .color-preview-box {
+            display: inline-block;
+            width: .75em;
+            height: .75em;
+            vertical-align: middle;
+            padding: 2px;
+            background-clip: content-box;
+            border: solid 1px #888;
+        }
+        </style>
+        <script type="text/javascript">
+            $(function() {
+                $('#color-block').on('colorchange', function(e) {
+                    var color = $(this).wheelColorPicker('value');
+                    var alpha = $(this).wheelColorPicker('color').a;
+                    $('.color-preview-box').css('background-color', color);
+                    $('.color-preview-alpha').text(Math.round(alpha * 100) + '%');
+                    console.log(color);
+                });
+            });
+
+            $(function() {
+                $('#color-block').on('colorchange', function(e) {
+                    var color = $(this).wheelColorPicker('value');
+                    var alpha = $(this).wheelColorPicker('color').a;
+                    $('#hola').css('background-color', color);
+                    $('.color-preview-alpha').text(Math.round(alpha * 100) + '%');
+                });
+            });
+        </script>
 
         <script type="text/javascript" src="./js/script.js"></script>
 
     </body>
-
-
-
-
-
-
 <html>
