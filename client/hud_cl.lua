@@ -49,7 +49,7 @@ RegisterNUICallback('change', function(data)
 end)
 
 RegisterNUICallback('reset', function(data)
-	SendNUIMessage({action = 'test'})
+	SendNUIMessage({action = 'reset'})
 end)
 
 RegisterNetEvent('PE:change')

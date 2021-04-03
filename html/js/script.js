@@ -26,7 +26,7 @@ window.addEventListener("message", function (event) {
       $("#health").fadeToggle();
     break;
 
-    case "test":
+    case "reset":
       $("#health").animate({
         top: "0px",
         left: "0px"
@@ -106,6 +106,34 @@ $("#time-switch").click(function() {$.post('https://pe-hud/change', JSON.stringi
 $("#microphone-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'microphone'}))})
 $("#close").click(function() {$.post('https://pe-hud/close')})
 $("#reset").click(function() {$.post('https://pe-hud/reset')})
+
+$(function() {
+  $('#color-block').on('colorchange', function(e) {
+      var color = $(this).wheelColorPicker('value');
+      var alpha = $(this).wheelColorPicker('color').a;
+      $('.color-preview-box').css('background-color', color);
+      $('.color-preview-alpha').text(Math.round(alpha * 100) + '%');
+      console.log(color);
+  });
+});
+
+$(function() {
+  $('#color-block').on('colorchange', function(e) {
+      var color = $(this).wheelColorPicker('value');
+      var alpha = $(this).wheelColorPicker('color').a;
+      $('.color-preview-box').css('background-color', color);
+      $('.color-preview-alpha').text(Math.round(alpha * 100) + '%');
+      console.log(color);
+  });
+});
+
+$(function() {
+$('#color-block').on('colorchange', function(e) {
+  var color = $(this).wheelColorPicker('value');
+  var alpha = $(this).wheelColorPicker('color').a;
+  $('#health-circle').css('stroke', color);
+});
+});
 
 document.onkeyup = function (data) {
   if (data.which == 27) {
