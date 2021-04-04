@@ -10,50 +10,50 @@
 .imageleft {
   float:left;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .imageleft2 {
   float:left;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .imageleft3 {
   float:left;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .buttonleft {
   float:left;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: 2vw;
 }
 
 .buttonleft2 {
   float:left;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: 2vw;
 }
 
 .buttonleft3 {
   float:left;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: 2vw;
 
 }
 .imagecenter {
   position: absolute;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: 21vw;
 }
 .imagecenter2 {
   position: absolute;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-left: 21vw;
 }
 .imagecenter3 {
@@ -64,25 +64,25 @@
 .buttoncenter {
   position: absolute;
   margin-left: 28vw;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .buttoncenter2 {
   position: absolute;
   margin-left: 28vw;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .buttoncenter3 {
   position: absolute;
   margin-left: 28vw;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .imageright {
   float:right;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-right: 2vw;
 
 }
@@ -90,7 +90,7 @@
 .imageright2 {
   float:right;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-right: 2vw;
 
 }
@@ -98,7 +98,7 @@
 .imageright3 {
   float:right;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-right: 2vw;
 
 }
@@ -106,21 +106,21 @@
 .buttonright {
   float:right;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 
 .buttonright2 {
   float:right;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 
 .buttonright3 {
   float:right;
   position: relative;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .switch {
@@ -184,21 +184,24 @@ input:checked + .slider:before {
 }
 
 /* Reset buttons*/
-div .button{
-  width:275px;
-  height:65px;
+div .button-left{
+  width:255px;
+  height:55px;
   font-size:16px;
   margin:auto;
   display:flex;
+  float:left;
   justify-content:center;
   align-items:center;
   position:relative;
   cursor:pointer;
   border-radius: 4px;
-
+  margin-left: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
-.button{
+.button-left{
   font-family: Kum;
   color:#fff;
   border:1px solid #fff;
@@ -208,12 +211,12 @@ div .button{
   background:rgb(134, 196, 41);
 }
 
-.button:hover{
+.button-left:hover{
   color:#fff;
   background:rgb(224, 57, 57);
 }
 
-.button:after {
+.button-left:after {
   content: "";
   background: #f1f1f1;
   display: block;
@@ -226,7 +229,60 @@ div .button{
   transition: all 0.8s
 }
 
-.button:active:after{
+.button-left:active:after{
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+/* Button right*/
+div .button-right{
+  width:255px;
+  height:55px;
+  font-size:16px;
+  margin:auto;
+  display:flex;
+  float:right;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  cursor:pointer;
+  border-radius: 4px;
+  margin-right: 16px;
+  margin-top: 16px;
+  margin-bottom:16px;
+}
+
+.button-right{
+  font-family: Kum;
+  color:#fff;
+  border:1px solid #fff;
+  transition:.2s all;
+  overflow:hidden;
+  font-weight:bold;
+  background:rgb(134, 196, 41);
+}
+
+.button-right:hover{
+  color:#fff;
+  background:rgb(224, 57, 57);
+}
+
+.button-right:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: 0px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.button-right:active:after{
   padding: 0;
   margin: 0;
   opacity: 1;
