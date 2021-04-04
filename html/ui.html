@@ -7,7 +7,6 @@
     <style> #movie { display: none; }</style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="./js/jquery.wheelcolorpicker.min.js"></script>
     <script type="text/javascript" src="./js/jquery.wheelcolorpicker.js"></script>
     <link type="text/css" rel="stylesheet" href="./css/wheelcolorpicker.dark.css" />
     <script>
@@ -35,25 +34,25 @@
       </svg>
 
       <svg class="circle" id="armor" width="60" height="60">
-        <circle class="progressplayer armor" stroke="#3585DA" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer armor" id="armor-circle" stroke="#3585DA" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/armor.png" height="17" width="17" x="16" y="27"></image>
       </svg>
 
       <svg class="circle" id="stamina" width="60" height="60">
-        <circle class="progressplayer stamina" stroke="#FFC100" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer stamina" id="stamina-circle" stroke="#FFC100" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/stamina.png" height="18" width="18" x="15" y="27"></image>
       </svg>
       <svg class="circle" id="oxygen" width="60" height="60">
-        <circle class="progressplayer oxygen" stroke="#A636ED" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer oxygen" id="oxygen-circle" stroke="#A636ED" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/oxygen.png" height="18" width="18" x="15" y="27"></image>
       </svg>
 
       <svg class="circle" id="microphone" width="60" height="60">
-        <circle class="progressplayer microphone" stroke="#ff6f00" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+        <circle class="progressplayer microphone" id="microphone-circle" stroke="#ff6f00" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
         <image href="img/microphone.png" height="18" width="18" x="15" y="27"></image>
       </svg>
         <svg class="circle" id="id" width="60" height="60">
-          <circle class="progressplayer id" stroke="#FF0046" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+          <circle class="progressplayer id" id="id-circle" stroke="#FF0046" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
           <text class="idnumber" x="24" y="37" dominant-baseline="middle" text-anchor="middle">123</text>
         </svg>
     </div>
@@ -67,97 +66,90 @@
             </div>
         </div>
         <div class="window">
-          <div class="background" height="900px">
-            <image  class="imageleft" id="helpme"src="./img/health.png" alt="Image did not load correctly" width="30px" height="30px" >
-        
+          <div class="background" height="700px">
+              <image class="imageleft" src="./img/health.png" alt="Image did not load correctly" width="30px" height="30px" >
+              <image class="imagecenter" src="./img/armor.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imageright"  src="./img/stamina.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imageleft2" src="./img/map.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imagecenter2" src="./img/id.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imageright2" src="./img/oxygen.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imageleft3" src="./img/movie.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imagecenter3" src="./img/time.png" alt="Image did not load correctly" width="30px" height="30px">
+              <image class="imageright3" src="./img/microphone.png" alt="Image did not load correctly" width="30px" height="30px">
+
               <label class="switch buttonleft" >
-                  <input type="checkbox" id="health-switch" checked>
-                  <span class="slider round"></span>
+                <input type="checkbox" id="health-switch" checked>
+                <span class="slider round"></span>
               </label>
-                
-              <image class="imagecenter"  src="./img/armor.png" alt="Image did not load correctly" width="30px" height="30px">
-        
+
               <label class="switch buttoncenter" >
-                  <input type="checkbox" id="armor-switch" checked>
-                  <span class="slider round"></span>
+                <input type="checkbox" id="armor-switch" checked>
+                <span class="slider round"></span>
               </label>
         
               <label class="switch buttonright" >
-                  <input type="checkbox" id="stamina-switch" checked>
-                  <span class="slider round"></span>
-        
+                <input type="checkbox" id="stamina-switch" checked>
+                <span class="slider round"></span>
               </label>
-              
-              <image class="imageright"  src="./img/stamina.png" alt="Image did not load correctly" width="30px" height="30px">
-              <br><br>
-              
-              <image class="imageleft2" src="./img/map.png" alt="Image did not load correctly" width="30px" height="30px">
-        
+
               <label class="switch buttonleft2" >
-                  <input type="checkbox" id="map-switch" >
-                  <span class="slider round"></span>
+                <input type="checkbox" id="map-switch" >
+                <span class="slider round"></span>
               </label>
-        
-              <image class="imagecenter2" src="./img/id.png" alt="Image did not load correctly" width="30px" height="30px">
-        
+
               <label class="switch buttoncenter2" >
-                  <input type="checkbox" id="id-switch" >
-                  <span class="slider round"></span>
+                <input type="checkbox" id="id-switch" >
+                <span class="slider round"></span>
               </label>
         
               <label class="switch buttonright2" >
-                  <input type="checkbox" id="oxygen-switch">
-                  <span class="slider round"></span>
+                <input type="checkbox" id="oxygen-switch">
+                <span class="slider round"></span>
               </label>
-              
-              <image class="imageright2" src="./img/oxygen.png" alt="Image did not load correctly" width="30px" height="30px">
-              <br><br>
-        
-              <image class="imageleft3" src="./img/movie.png" alt="Image did not load correctly" width="30px" height="30px">
-              
-        
+
               <label class="switch buttonleft3" >
-                  <input type="checkbox" id="movie-switch" >
-                  <span class="slider round"></span>
+                <input type="checkbox" id="movie-switch" >
+                <span class="slider round"></span>
               </label>
-          
-              <image class="imagecenter3" src="./img/time.png" alt="Image did not load correctly" width="30px" height="30px">
-        
+
               <label class="switch buttoncenter3" >
-                  <input type="checkbox" id="time-switch" >
-                  <span class="slider round"></span>
+                <input type="checkbox" id="time-switch" >
+                <span class="slider round"></span>
               </label> 
         
               <label class="switch buttonright3" >
-                  <input type="checkbox" id="microphone-switch" >
-                  <span class="slider round"></span>
+                <input type="checkbox" id="microphone-switch" >
+                <span class="slider round"></span>
               </label>
-              
-              <image class="imageright3" src="./img/microphone.png" alt="Image did not load correctly" width="30px" height="30px">
-              <br><br>
-        
+
               <div>
-                  <button type="button" class="button" id="reset">Reset</button>
+                <button type="button" class="button" id="reset-position">Reset position</button>
+                <button type="button" class="button" id="reset-color">Reset color</button>
               </div>
-        
+
+              <div>
+              <select name="select" id="selection" class="selection" >
+                <option class="options" value="health-option">Health</option>
+                <option class="options" value="shield-option">Shield</option>
+                <option class="options" value="stamina-option">Stamina</option>
+                <option class="options" value="oxygen-option">Oxygen</option>
+                <option class="options" value="microphone-option">Microphone</option>
+                <option class="options" value="id-option">Id</option>
+                <option class="options" value="time-option">Time</option>
+              </select>
+
               <p> <input id="color-block" type="text" value="#ccc" data-wheelcolorpicker="" data-wcp-format="rgba" data-wcp-layout="block" data-wcp-sliders="wsvap" data-wcp-cssclass="color-block" data-wcp-autoresize="false"> </p>
             
               <style type="text/css">
-              .color-block {
-                  max-width: 340px;
-                  width: 100%;
-                  box-sizing: border-box;
-              }
-              .color-preview-box {
-                  display: inline-block;
-                  width: .75em;
-                  height: .75em;
-                  vertical-align: middle;
-                  padding: 2px;
-                  background-clip: content-box;
-                  border: solid 1px #888;
-              }
+                .color-block {
+                    max-width: 340px;
+                    width: 100%;
+                    box-sizing: border-box; 
+                    margin-left: 8px;
+                    margin-bottom: 8px;
+                }
               </style>
+              </div>
             </div>
         </div>
     </div>

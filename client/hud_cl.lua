@@ -38,7 +38,7 @@ Citizen.CreateThread(function()
 end)
 
 -- NUI + Events
-RegisterNUICallback('close', function(data)
+RegisterNUICallback('close', function(event)
 	SendNUIMessage({ action = 'hide' })
 	SetNuiFocus(false, false)
 	isOpen = false
@@ -46,10 +46,6 @@ end)
 
 RegisterNUICallback('change', function(data)
     TriggerEvent('PE:change', data.action)
-end)
-
-RegisterNUICallback('reset', function(data)
-	SendNUIMessage({action = 'reset'})
 end)
 
 RegisterNetEvent('PE:change')

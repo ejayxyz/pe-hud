@@ -5,7 +5,6 @@
 
 .background {
   background-color: black;
-
 }
 
 .imageleft {
@@ -183,30 +182,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/* 
-.resetselect {
-  color:#fff;
-  border:1px solid #fff;
-  transition:.2s all;
-  overflow:hidden;
-  font-weight:bold;
 
-  width:150px;
-  height:50px;
-  font-size:16px;
-  margin:auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-  cursor:pointer;
-}
-
-.resetselect:hover{
-  color:#000000;
-  background:#fff;
-}
-*/
+/* Reset buttons*/
 div .button{
   width:275px;
   height:65px;
