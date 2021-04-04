@@ -3,124 +3,126 @@
   src: url('../fonts/KumbhSans-Bold.ttf');
 }
 
+
+
 .background {
-  background-color: black;
+  background: rgb(28,40,83);
+  background: linear-gradient(90deg, rgba(28,40,83,1) 0%, rgba(18,38,78,1) 25%, rgba(21,46,88,1) 50%, rgba(18,38,78,1) 75%, rgba(28,37,77,1) 100%);
 }
 
 .imageleft {
-  float:left;
   position: relative;
-  margin-top: 5px;
+  margin-top: 5%;
+  top: 17px;
+  left: 5%;
 }
 
 .imageleft2 {
-  float:left;
   position: relative;
-  margin-top: 5px;
+  margin-top: 5%;
+  top: 17px;
+  left: 5%;
 }
 
 .imageleft3 {
-  float:left;
   position: relative;
-  margin-top: 5px;
+  margin-top: 1%;
+  top: 17px;
+  left: 5%;
 }
 
 .buttonleft {
-  float:left;
   position: relative;
-  margin-top: 5px;
-  margin-left: 2vw;
+  margin-left: 7%;
+  margin-top: 2%;
 }
 
 .buttonleft2 {
-  float:left;
   position: relative;
-  margin-top: 5px;
-  margin-left: 2vw;
+  margin-left: 7%;
+  margin-top: 2%;
 }
 
 .buttonleft3 {
-  float:left;
   position: relative;
-  margin-top: 5px;
-  margin-left: 2vw;
-
+  margin-left: 7%;
+  margin-top: 2%;
 }
 .imagecenter {
-  position: absolute;
-  margin-top: 5px;
-  margin-left: 21vw;
+  position: relative;
+  margin-top: 3%;
+  top: 17px;
+  left: 5%;
+  margin-left: 13%;
 }
 .imagecenter2 {
-  position: absolute;
-  margin-top: 5px;
-  margin-left: 21vw;
+  position: relative;
+  margin-top: 3%;
+  top: 17px;
+  left: 5%;
+  margin-left: 13%;
 }
 .imagecenter3 {
-  position: absolute;
-  margin-top: 15px;
-  margin-left: 21vw;
+  position: relative;
+  margin-top: 3%;
+  top: 17px;
+  left: 5%;
+  margin-left: 13%;
 }
 .buttoncenter {
-  position: absolute;
-  margin-left: 28vw;
-  margin-top: 5px;
+  position: relative;
+  margin-left: 7%;
 }
 
 .buttoncenter2 {
-  position: absolute;
-  margin-left: 28vw;
-  margin-top: 5px;
+  position: relative;
+  margin-left: 7%;
 }
 
 .buttoncenter3 {
-  position: absolute;
-  margin-left: 28vw;
-  margin-top: 5px;
+  position: relative;
+  margin-left: 7%;
 }
 
 .imageright {
-  float:right;
   position: relative;
-  margin-top: 5px;
-  margin-right: 2vw;
-
+  top: 17px;
+  left: 5%;
+  margin-left: 13%;
 }
 
 .imageright2 {
-  float:right;
   position: relative;
-  margin-top: 5px;
-  margin-right: 2vw;
-
+  top: 17px;
+  left: 5%;
+  margin-left: 13%;
 }
 
 .imageright3 {
-  float:right;
   position: relative;
-  margin-top: 5px;
-  margin-right: 2vw;
-
+  top: 17px;
+  left: 5%;
+  margin-left: 13%;
 }
 
 .buttonright {
-  float:right;
   position: relative;
-  margin-top: 5px;
+  margin-top: 2%;
+  margin-left: 7%;
 }
 
 
 .buttonright2 {
-  float:right;
   position: relative;
-  margin-top: 5px;
+  margin-top: 2%;
+  margin-left: 7%;
 }
 
 
 .buttonright3 {
-  float:right;
   position: relative;
-  margin-top: 5px;
+  margin-top: 2%;
+  margin-left: 7%;
 }
 
 .switch {
@@ -143,7 +145,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(224, 57, 57);
+  background: rgb(140,38,122);
+  background: linear-gradient(90deg, rgba(140,38,122,1) 0%, rgba(254,42,87,1) 100%);
+  box-shadow: 0 0 10px 2px #fd2e78;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -161,11 +165,13 @@
 }
 
 input:checked + .slider {
-  background-color: rgb(134, 196, 41);
+  background: rgb(15,175,233);
+  background: linear-gradient(90deg, rgba(15,175,233,1) 0%, rgba(3,230,248,1) 100%);
+  box-shadow: 0 0 10px 2px #06e4f7;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #4b4b4b;
+  box-shadow: 0 0 10px 2px #c137f5;
 }
 
 input:checked + .slider:before {
@@ -195,7 +201,7 @@ div .button-left{
   align-items:center;
   position:relative;
   cursor:pointer;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-left: 16px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -205,15 +211,20 @@ div .button-left{
   font-family: Kum;
   color:#fff;
   border:1px solid #fff;
-  transition:.2s all;
   overflow:hidden;
   font-weight:bold;
-  background:rgb(134, 196, 41);
+  background: rgb(32,141,232);
+  background: linear-gradient(90deg, rgba(32,141,232,1) 0%, rgba(0,246,251,1) 100%);
+  box-shadow: 0 0 10px 2px #06e4f7;
+  text-shadow: 1px 1px 5px black;
 }
 
 .button-left:hover{
   color:#fff;
-  background:rgb(224, 57, 57);
+  background: rgb(131,18,42);
+  background: linear-gradient(90deg, rgba(131,18,42,1) 0%, rgba(255,42,86,1) 100%);
+  box-shadow: 0 0 10px 2px #fd2e78;
+  text-shadow: 1px 1px 5px black;
 }
 
 .button-left:after {
@@ -226,7 +237,7 @@ div .button-left{
   margin-left: 0px !important;
   margin-top: -120%;
   opacity: 0;
-  transition: all 0.8s
+  transition: 0.5s;
 }
 
 .button-left:active:after{
@@ -234,6 +245,10 @@ div .button-left{
   margin: 0;
   opacity: 1;
   transition: 0s
+}
+
+.button-left:focus {
+  box-shadow: 0 0 10px 2px #c137f5;
 }
 
 /* Button right*/
@@ -248,7 +263,7 @@ div .button-right{
   align-items:center;
   position:relative;
   cursor:pointer;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-right: 16px;
   margin-top: 16px;
   margin-bottom:16px;
@@ -261,17 +276,23 @@ div .button-right{
   transition:.2s all;
   overflow:hidden;
   font-weight:bold;
-  background:rgb(134, 196, 41);
+  background: rgb(0,246,251);
+  background: linear-gradient(90deg, rgba(0,246,251,1) 0%, rgba(32,141,232,1) 100%);
+  box-shadow: 0 0 10px 2px #06e4f7;
+  text-shadow: 1px 1px 5px black;
 }
 
 .button-right:hover{
   color:#fff;
-  background:rgb(224, 57, 57);
+  background: rgb(255,42,86);
+  background: linear-gradient(90deg, rgba(255,42,86,1) 0%, rgba(131,18,42,1) 100%);
+  box-shadow: 0 0 10px 2px #fd2e78;
+  text-shadow: 1px 1px 5px black;
 }
 
 .button-right:after {
   content: "";
-  background: #f1f1f1;
+  background: rgba(131,18,42,1);
   display: block;
   position: absolute;
   padding-top: 300%;
@@ -287,4 +308,8 @@ div .button-right{
   margin: 0;
   opacity: 1;
   transition: 0s
+}
+
+.button-right:focus {
+  box-shadow: 0 0 10px 2px #c137f5;
 }

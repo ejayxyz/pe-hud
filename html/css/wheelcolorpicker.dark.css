@@ -12,23 +12,19 @@
 @import url('wheelcolorpicker.css');
 
 .jQWCP-wWidget {
-	background: #222;
-	border-color: #444;
+	background: rgb(0, 0, 0);
+	background: linear-gradient(90deg, rgba(19,36,80,1) 0%, rgba(21,36,80,1) 46%, rgba(5,16,57,1) 100%);
 }
 
 .jQWCP-wWidget.jQWCP-block {
 	position: relative;
-	border-top-color: #070707;
-	border-left-color: #070707;
-	border-right-color: #aaa;
-	border-bottom-color: #aaa;
-	box-shadow: -1px -1px 1px #000;
+	box-shadow: 0 0 10px 2px #06e4f7;
 }
 
 .jQWCP-wWheel {
-	border-color: #444;
+	box-shadow: 0 0 6px 2px #fd2e78;
 }
 
 .jQWCP-slider {
-	border-color: #444;
+	box-shadow: 0 0 6px 2px #fd2e78;
 }

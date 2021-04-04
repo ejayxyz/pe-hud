@@ -19,17 +19,21 @@
   background: #eee;
   box-sizing: content-box;
   box-shadow: 1px 1px 4px rgba(0,0,0,.5);
-  border-radius: 4px;
-  border: solid 1px #aaa;
+  border-radius: 6px;
   padding: 10px;
   z-index: 1001;
   touch-action: none;
+  border-color: #aaa;
+}
+
+.jQWCP-wWidget:focus {
+  box-shadow: 0 0 10px 2px #c137f5;
 }
 
 .jQWCP-wWidget.jQWCP-block {
   position: relative;
   border-color: #aaa;
-  box-shadow: inset 1px 1px 1px #ccc;
+  border-radius: 4px;
 }
 
 .jQWCP-wWheel {
@@ -43,7 +47,7 @@
   -webkit-border-radius: 90px;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: solid 1px #aaa;
+  border: solid 2px rgb(151, 151, 151);
   margin: -1px;
   margin-right: 10px;
   transition: border .15s;
@@ -51,7 +55,11 @@
 }
 
 .jQWCP-wWheel:hover {
-  border-color: #666;
+  box-shadow: 0 0 6px 2px #06e4f7;
+}
+
+.jQWCP-wWheel:focus {
+  box-shadow: 0 0 10px 2px #c137f5;
 }
 
 .jQWCP-wWheelOverlay {
@@ -103,7 +111,7 @@
   left: 0;
   top: 0;
   box-sizing: border-box;
-  border: solid 1px #aaa;
+  border: solid 1px rgb(170, 170, 170);
   margin: -1px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -115,7 +123,7 @@
 }
 
 .jQWCP-slider-wrapper:hover .jQWCP-slider {
-  border-color: #666;
+  box-shadow: 0 0 6px 2px #06e4f7;
 }
 
 .jQWCP-scursor {

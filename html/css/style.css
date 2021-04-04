@@ -7,9 +7,10 @@
 .main {
   position: absolute;
   bottom: 0.5%;
-  right: 38%;
+  right: 39%;
   overflow:none;
 }
+
 
 .progress {
   -webkit-transition: 0.35s stroke-dashoffset;
@@ -98,7 +99,7 @@
 .browser-window-osx {
   box-shadow: 0px 6px 9px 0px rgba(50, 50, 50, 0.11);
   border: 1px solid #c3c3c3;
-  width: 36%;
+  width: 32%;
   top: 5vh;
   left: 32vw;
   border-radius: 5px;
@@ -106,8 +107,8 @@
 }
 
 .browser-window-osx .header {
-  background: #4b4b4b;
-  height: 25px;
+  background: #0a0e1f;
+  height: 35px;
   border-radius: 5px 5px 0 0;
   padding: 0px 0px 0 10px;
 }
@@ -118,31 +119,10 @@
   height: 25px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 450px) {
   .browser-window-osx .header .menu {
-      display: none;
+    display: none;
   }
-}
-
-.browser-window-osx .header .menu span {
-  margin: 6px 4px;
-  padding: 0;
-  height: 12px;
-  width: 12px;
-  display: block;
-  float: left;
-}
-
-.browser-window-osx .header .menu span.close {
-  background: #df7065;
-}
-
-.browser-window-osx .header .menu span.minimize {
-  background: #e6bb46;
-}
-
-.browser-window-osx .header .menu span.maximize {
-  background: #5bcc8b;
 }
 
 .browser-window-osx .window {
@@ -153,8 +133,6 @@
   border-radius: 0 0 5px 5px;
 }
 
-
-
 .selection {
   text-align-last: center;
   text-align: center;
@@ -162,16 +140,33 @@
   -moz-text-align-last: center;
   font-family: Kum;
   font-size:16px;
+  color: #fff;
   float: right;
   width:185px;
   height:30px;
   margin-right: 14px;
   border-radius: 5px;
-  transition: all 0.1s
+  border-color: whitesmoke;
+  transition: all 0.1s;
+  background: rgb(255,172,31);
+  background: linear-gradient(90deg, rgba(255,172,31,1) 0%, rgba(254,69,23,1) 100%);
+  box-shadow: 0 0 10px 2px #ffb73a;
+  text-shadow: 1px 1px 5px black;
+  overflow: hidden;
 }
 
-.selection:hover {
-  border-radius: 5px;
-  border-width: 2px;
-  border-color: gray;
+.selection select {
+  background: transparent;
+  width: 150px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+}
+
+.selection:focus {
+  box-shadow: 0 0 10px 2px #c137f5;
+}
+
+.options {
+  background-color: #0a0e1f;
 }

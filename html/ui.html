@@ -44,7 +44,7 @@
       </svg>
       <svg class="circle" id="oxygen" width="60" height="60">
         <circle class="progressplayer oxygen" id="oxygen-circle" stroke="#A636ED" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
-        <image href="img/oxygen.png" height="18" width="18" x="15" y="27"></image>
+        <image href="img/oxygen.png" height="22" width="22" x="13" y="24"></image>
       </svg>
 
       <svg class="circle" id="microphone" width="60" height="60">
@@ -58,64 +58,72 @@
     </div>
 
     <div class="browser-window-osx" id="drag-browser">
-        <div class="header">
-            <div class="menu">
-                <span id="close" class="close"></span>
-                <span class="minimize"></span>
-                <span class="maximize" id="reset"></span>
-            </div>
+      <div class="header">
+        <image src="img/reset.png" id="reset" style="float: right; margin-top: 8px; margin-right: 8px; position:relative;" height="18" width="18"></image> 
+        <image src="img/cross.png" id="close" height="20" width="20" style="margin-top: 8px; float: left; position:relative;"></image> 
+        <p style="color:white; text-align:center; font-family: Kum; position:relative; top:10px;">HUD SETTINGS</p>
+        <div class="menu">
         </div>
+      </div>
         <div class="window">
-          <div class="background" height="700px">
-              <image class="imageleft" src="./img/health.png" alt="Image did not load correctly" width="30px" height="30px" >
-              <image class="imagecenter" src="./img/armor.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imageright"  src="./img/stamina.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imageleft2" src="./img/map.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imagecenter2" src="./img/id.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imageright2" src="./img/oxygen.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imageleft3" src="./img/movie.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imagecenter3" src="./img/time.png" alt="Image did not load correctly" width="30px" height="30px">
-              <image class="imageright3" src="./img/microphone.png" alt="Image did not load correctly" width="30px" height="30px">
+          <div class="background">
+              <image class="imageleft" src="./img/health.png" alt="Image did not load correctly">
 
               <label class="switch buttonleft" >
                 <input type="checkbox" id="health-switch" checked>
                 <span class="slider round"></span>
               </label>
+  
+              <image class="imagecenter" src="./img/armor.png" alt="Image did not load correctly">
 
               <label class="switch buttoncenter" >
                 <input type="checkbox" id="armor-switch" checked>
                 <span class="slider round"></span>
               </label>
-        
+
+              <image class="imageright"  src="./img/stamina.png" alt="Image did not load correctly">
+              
               <label class="switch buttonright" >
                 <input type="checkbox" id="stamina-switch" checked>
                 <span class="slider round"></span>
-              </label>
+              </label><br>
+
+              <image class="imageleft2" src="./img/map.png" alt="Image did not load correctly">
 
               <label class="switch buttonleft2" >
                 <input type="checkbox" id="map-switch" >
                 <span class="slider round"></span>
               </label>
+                
+              <image class="imagecenter2" src="./img/id.png" alt="Image did not load correctly">
 
               <label class="switch buttoncenter2" >
                 <input type="checkbox" id="id-switch" >
                 <span class="slider round"></span>
               </label>
-        
+
+              <image class="imageright2" src="./img/oxygen.png" alt="Image did not load correctly">
+
               <label class="switch buttonright2" >
-                <input type="checkbox" id="oxygen-switch">
-                <span class="slider round"></span>
-              </label>
+                  <input type="checkbox" id="oxygen-switch">
+                  <span class="slider round"></span>
+              </label><br>
+
+              <image class="imageleft3" src="./img/movie.png" alt="Image did not load correctly">
 
               <label class="switch buttonleft3" >
-                <input type="checkbox" id="movie-switch" >
-                <span class="slider round"></span>
+                  <input type="checkbox" id="movie-switch" >
+                  <span class="slider round"></span>
               </label>
+
+              <image class="imagecenter3" src="./img/time.png" alt="Image did not load correctly">
 
               <label class="switch buttoncenter3" >
                 <input type="checkbox" id="time-switch" >
                 <span class="slider round"></span>
               </label> 
+
+              <image class="imageright3" src="./img/microphone.png" alt="Image did not load correctly">
         
               <label class="switch buttonright3" >
                 <input type="checkbox" id="microphone-switch" >
@@ -124,11 +132,11 @@
 
               <div>
                 <button type="button" class="button-left" id="reset-position">Reset position</button>
-                <button type="button" class="button-right" id="reset-color">Reset color</button>
+                <button type="button" class="button-right" id="reset-color">Reset colors</button>
               </div>
-
-              <select name="select" id="selection" class="selection" >
-                <option class="options" value="health-option">Health</option>
+              <div>
+              <select id="selection" class="selection" >
+                <option class="options" value="health-option" selected>Health</option>
                 <option class="options" value="shield-option">Shield</option>
                 <option class="options" value="stamina-option">Stamina</option>
                 <option class="options" value="oxygen-option">Oxygen</option>
@@ -136,6 +144,7 @@
                 <option class="options" value="id-option">Id</option>
                 <option class="options" value="time-option">Time</option>
               </select>
+            </div>
               <p> <input id="color-block" type="text" value="#ccc" data-wheelcolorpicker="" data-wcp-format="rgba" data-wcp-layout="block" data-wcp-sliders="wsvap" data-wcp-cssclass="color-block" data-wcp-autoresize="false"> </p>
             
               <style type="text/css">

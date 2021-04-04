@@ -53,8 +53,42 @@ window.addEventListener("message", function (event) {
     case "microphoneT":
       $("#microphone").fadeToggle();
     break;
-
   }
+});
+
+$(function() {
+  $('#color-block').on('colorchange', function() {
+    let color = $(this).wheelColorPicker('value')
+    switch ($("#selection").val()) {
+      case "health-option":
+        $('#health-circle').css('stroke', color);
+      break;
+
+      case "shield-option":
+        $('#armor-circle').css('stroke', color);
+      break;
+
+      case "stamina-option":
+        $('#stamina-circle').css('stroke', color);
+      break;
+
+      case "oxygen-option":
+        $('#oxygen-circle').css('stroke', color);
+      break;
+
+      case "microphone-option":
+        $('#microphone-circle').css('stroke', color);
+      break;
+
+      case "id-option":
+        $('#id-circle').css('stroke', color);
+      break;
+
+      case "time-option":
+        $('#time').css('color', color);
+      break;
+    };
+  });
 });
 
 $("#health-switch").click(function() { $.post('https://pe-hud/change', JSON.stringify({action: 'health'}));})
@@ -66,8 +100,8 @@ $("#id-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify
 $("#movie-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'movie'}))})
 $("#time-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'time'}))})
 $("#microphone-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'microphone'}))})
-
 $("#close").click(function() {$.post('https://pe-hud/close')})
+$("#reset").click(function() {$("#drag-browser").animate({top: "5vh", left: "32vw"});})
 
 $("#reset-position").click(function() {
   $("#health").animate({top: "0px", left: "0px"});
@@ -98,40 +132,7 @@ $(function() {
   });
 });
 
-$(function() {
-    $('#color-block').on('colorchange', function() {
-      let color = $(this).wheelColorPicker('value')
-      switch ($("#selection").val()) {
-        case "health-option":
-          $('#health-circle').css('stroke', color);
-        break;
 
-        case "shield-option":
-          $('#armor-circle').css('stroke', color);
-        break;
-
-        case "stamina-option":
-          $('#stamina-circle').css('stroke', color);
-        break;
-
-        case "oxygen-option":
-          $('#oxygen-circle').css('stroke', color);
-        break;
-
-        case "microphone-option":
-          $('#microphone-circle').css('stroke', color);
-        break;
-
-        case "id-option":
-          $('#id-circle').css('stroke', color);
-        break;
-
-        case "time-option":
-          $('#time').css('color', color);
-        break;
-      };
-    });
-});
 
 document.onkeyup = function (event) {
   if (event.code == 0x0001) {
