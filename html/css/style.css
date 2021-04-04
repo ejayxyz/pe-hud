@@ -5,9 +5,9 @@
 }
 
 .main {
-  position: absolute;
+  position: fixed;
   bottom: 0.5%;
-  right: 39%;
+  right: 38%;
   overflow:none;
 }
 
