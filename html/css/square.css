@@ -3,7 +3,12 @@
   src: url('../fonts/KumbhSans-Bold.ttf');
 }
 
+:root {
+  --neonpink:#c137f5;
+  --neonblue:#1fbfb8;
+  --pinkred:#fd2e78;
 
+}
 
 .background {
   background: rgb(28,40,83);
@@ -145,9 +150,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(140,38,122);
-  background: linear-gradient(90deg, rgba(140,38,122,1) 0%, rgba(254,42,87,1) 100%);
-  box-shadow: 0 0 10px 2px #fd2e78;
+  background: rgb(122,32,72);
+  background: linear-gradient(90deg, rgba(122,32,72,1) 0%, rgba(185,0,39,1) 100%);
+  box-shadow: 0 0 10px 2px var(--pinkred);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -165,13 +170,13 @@
 }
 
 input:checked + .slider {
-  background: rgb(15,175,233);
-  background: linear-gradient(90deg, rgba(15,175,233,1) 0%, rgba(3,230,248,1) 100%);
-  box-shadow: 0 0 10px 2px #06e4f7;
+  background: rgb(25,120,165);
+  background: linear-gradient(90deg, rgba(25,120,165,1) 0%, rgba(5,113,108,1) 100%);
+  box-shadow: 0 0 10px 2px var(--neonblue);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 10px 2px #c137f5;
+  box-shadow: 0 0 10px 2px var(--neonpink);
 }
 
 input:checked + .slider:before {
@@ -209,27 +214,28 @@ div .button-left{
 
 .button-left{
   font-family: Kum;
-  color:#fff;
-  border:1px solid #fff;
+  color:white;
+  border:1px solid white;
   overflow:hidden;
   font-weight:bold;
-  background: rgb(32,141,232);
-  background: linear-gradient(90deg, rgba(32,141,232,1) 0%, rgba(0,246,251,1) 100%);
-  box-shadow: 0 0 10px 2px #06e4f7;
+  background: rgb(25,120,165);
+  background: linear-gradient(90deg, rgba(25,120,165,1) 0%, rgba(5,113,108,1) 100%);
+  box-shadow: 0 0 10px 2px var(--neonblue);
   text-shadow: 1px 1px 5px black;
+  transition: all 1.5s;
 }
 
 .button-left:hover{
-  color:#fff;
-  background: rgb(131,18,42);
-  background: linear-gradient(90deg, rgba(131,18,42,1) 0%, rgba(255,42,86,1) 100%);
-  box-shadow: 0 0 10px 2px #fd2e78;
+  color:white;
+  background: rgb(122,32,72);
+  background: linear-gradient(90deg, rgba(122,32,72,1) 0%, rgba(185,0,39,1) 100%);
+  box-shadow: 0 0 10px 2px var(--pinkred);
   text-shadow: 1px 1px 5px black;
 }
 
 .button-left:after {
   content: "";
-  background: #f1f1f1;
+  background: rgba(131,18,42,1);
   display: block;
   position: absolute;
   padding-top: 300%;
@@ -237,18 +243,18 @@ div .button-left{
   margin-left: 0px !important;
   margin-top: -120%;
   opacity: 0;
-  transition: 0.5s;
+  transition: 1.5s;
 }
 
 .button-left:active:after{
   padding: 0;
   margin: 0;
   opacity: 1;
-  transition: 0s
+  transition: 1.5s;
 }
 
 .button-left:focus {
-  box-shadow: 0 0 10px 2px #c137f5;
+  box-shadow: 0 0 10px 2px var(--neonpink);
 }
 
 /* Button right*/
@@ -271,22 +277,22 @@ div .button-right{
 
 .button-right{
   font-family: Kum;
-  color:#fff;
-  border:1px solid #fff;
+  color:white;
+  border:1px solid white;
   transition:.2s all;
   overflow:hidden;
   font-weight:bold;
-  background: rgb(0,246,251);
-  background: linear-gradient(90deg, rgba(0,246,251,1) 0%, rgba(32,141,232,1) 100%);
-  box-shadow: 0 0 10px 2px #06e4f7;
+  background: rgb(25,120,165);
+  background: linear-gradient(90deg, rgba(25,120,165,1) 0%, rgba(5,113,108,1) 100%);
+  box-shadow: 0 0 10px 2px var(--neonblue);
   text-shadow: 1px 1px 5px black;
 }
 
 .button-right:hover{
-  color:#fff;
-  background: rgb(255,42,86);
-  background: linear-gradient(90deg, rgba(255,42,86,1) 0%, rgba(131,18,42,1) 100%);
-  box-shadow: 0 0 10px 2px #fd2e78;
+  color:white;
+  background: rgb(122,32,72);
+  background: linear-gradient(90deg, rgba(122,32,72,1) 0%, rgba(185,0,39,1) 100%);
+  box-shadow: 0 0 10px 2px var(--pinkred);
   text-shadow: 1px 1px 5px black;
 }
 
@@ -311,5 +317,5 @@ div .button-right{
 }
 
 .button-right:focus {
-  box-shadow: 0 0 10px 2px #c137f5;
+  box-shadow: 0 0 10px 2px var(--neonpink);
 }

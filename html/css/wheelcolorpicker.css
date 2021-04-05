@@ -12,6 +12,11 @@
  * plugin. These values might change on the fly.
  */
 
+:root {
+	--neonbluecolord:#405756 ;
+	--pinkredcolord:#3c051d;
+}
+
 .jQWCP-wWidget {
   position: absolute;
   width: 250px;
@@ -27,7 +32,7 @@
 }
 
 .jQWCP-wWidget:focus {
-  box-shadow: 0 0 10px 2px #c137f5;
+  box-shadow: 0 0 10px 2px var(--pinkredcolord);
 }
 
 .jQWCP-wWidget.jQWCP-block {
@@ -54,13 +59,6 @@
   cursor: crosshair;
 }
 
-.jQWCP-wWheel:hover {
-  box-shadow: 0 0 6px 2px #06e4f7;
-}
-
-.jQWCP-wWheel:focus {
-  box-shadow: 0 0 10px 2px #c137f5;
-}
 
 .jQWCP-wWheelOverlay {
   position: absolute;
@@ -68,7 +66,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: black;
   opacity: 0;
   -webkit-border-radius: 90px;
   -moz-border-radius: 50%;
@@ -83,8 +81,8 @@
   left: 50%;
   margin: -6px -6px;
   cursor: crosshair;
-  border: solid 2px #fff;
-  box-shadow: 1px 1px 2px #000;
+  border: solid 2px white;
+  box-shadow: 1px 1px 2px black;
   border-radius: 50%;
 }
 
@@ -122,10 +120,6 @@
   cursor: crosshair;
 }
 
-.jQWCP-slider-wrapper:hover .jQWCP-slider {
-  box-shadow: 0 0 6px 2px #06e4f7;
-}
-
 .jQWCP-scursor {
   position: absolute;
   left: 0;
@@ -134,8 +128,8 @@
   height: 6px;
   margin: -5px -1px -5px -3px;
   cursor: crosshair;
-  border: solid 2px #fff;
-  box-shadow: 1px 1px 2px #000;
+  border: solid 2px white;
+  box-shadow: 1px 1px 2px black;
   border-radius: 4px;
 }
 

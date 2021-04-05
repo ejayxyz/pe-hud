@@ -16,6 +16,7 @@ client_scripts {
 ui_page 'html/ui.html'
 
 files {
+	'hmtl/config.json',
 	'html/ui.html',
 	'html/css/*.css',
 	'html/fonts/*.ttf',

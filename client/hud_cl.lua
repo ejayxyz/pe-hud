@@ -20,6 +20,9 @@ Citizen.CreateThread(function()
 		if minutes <= 9 then
 			minutes = "0" .. minutes
 		end
+		if hours <= 9 then
+			hours = "0" .. hours
+		end
 		time.hours = hours
 		time.minutes = minutes
 		SendNUIMessage({

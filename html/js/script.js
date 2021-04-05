@@ -109,7 +109,7 @@ $("#reset-position").click(function() {
   $("#stamina").animate({top: "0px", left: "0px"});
   $("#oxygen").animate({top: "0px", left: "0px"});
   $("#id").animate({top: "0px", left: "0px"});
-  $("#time").animate({top: "0px", left: "0px"});
+  $("#time").animate({top: "0%", left: "50%"});
   $("#microphone").animate({top: "0px", left: "0px"});
 });
 
@@ -132,10 +132,8 @@ $(function() {
   });
 });
 
-
-
-document.onkeyup = function (event) {
-  if (event.code == 0x0001) {
+document.onkeyup = function(event) {
+  if (event.key == 'Escape') {
       $.post('https://pe-hud/close');
   }
 };
