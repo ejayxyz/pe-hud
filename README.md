@@ -9,7 +9,7 @@ A very simple standalone HUD with menu that allows for customization
  - Multiple options like movie style and hide map
 
 # Video/Screenshot
-[![Watch the video](https://imgur.com/a/TqTXay5)](https://streamable.com/o34lo9)
+[![Watch the video](https://imgur.com/a/TqTXay5.jpg)](https://streamable.com/o34lo9)
 
 # Acknowledgement
 
