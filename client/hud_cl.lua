@@ -126,7 +126,6 @@ Citizen.CreateThread(function()
 			SendNUIMessage({action = 'movieT'})
 			isPaused = false
 		end
-		print(movieHud)
 		SendNUIMessage({
 			action = "hud",
 			health = health,
