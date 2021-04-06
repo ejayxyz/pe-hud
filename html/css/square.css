@@ -125,7 +125,7 @@ div .button-left{
 .button-left{
   font-family: Kum;
   color:white;
-  border:1px solid white;
+  border:1px solid #ccc;
   transition:.2s all;
   overflow:hidden;
   font-weight:bold;
@@ -191,7 +191,7 @@ div .button-right{
 .button-right{
   font-family: Kum;
   color:white;
-  border:1px solid white;
+  border:1px solid #ccc;
   transition:.2s all;
   overflow:hidden;
   font-weight:bold;
