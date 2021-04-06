@@ -14,44 +14,76 @@ window.addEventListener("message", function (event) {
       progressCircle(event.data.stamina, ".stamina");
       progressCircle(event.data.oxygen, ".oxygen");
       progressCircle(event.data.players, ".id");
-      $(".idnumber").text(event.data.id)
-      $(".time").text(event.data.time)
+      $("#idnumber").text(event.data.id)
+      $("#time").text(event.data.time)
     break;
 
     case "microphone":
       progressCircle(event.data.microphone, ".microphone");
     break;
+
+    case "healthHide":
+      $("#health").fadeOut();
+    break;
+
+    case "armorHide":
+      $("#armor").fadeOut();
+    break;
     
+    case "staminaHide":
+      $("#stamina").fadeOut();
+    break;
+    
+    case "oxygenHide":
+      $("#oxygen").fadeOut();
+    break;
+
+    case "idHide":
+      $("#id").fadeOut();
+    break;
+
+    case "movieHide":
+      $("#movie").fadeOut();
+    break;
+
+    case "timeHide":
+      $("#time").fadeOut();
+    break;
+
+    case "microphoneHide":
+      $("#microphone").fadeOut();
+    break;
+        
     case "healthT":
-      $("#health").fadeToggle();
+      $("#health").fadeIn();
     break;
 
     case "armorT":
-      $("#armor").fadeToggle();
+      $("#armor").fadeIn();
     break;
 
     case "staminaT":
-      $("#stamina").fadeToggle();
+      $("#stamina").fadeIn();
     break;
 
     case "oxygenT":
-      $("#oxygen").fadeToggle();
+      $("#oxygen").fadeIn();
     break;
 
     case "idT":
-      $("#id").fadeToggle();
+      $("#id").fadeIn();
     break;
 
     case "movieT":
-      $("#movie").fadeToggle();
+      $("#movie").fadeIn();
     break;
 
     case "timeT":
-      $("#time").fadeToggle();
+      $("#time").fadeIn();
     break;
 
     case "microphoneT":
-      $("#microphone").fadeToggle();
+      $("#microphone").fadeIn();
     break;
   }
 });
@@ -109,7 +141,7 @@ $("#reset-position").click(function() {
   $("#stamina").animate({top: "0px", left: "0px"});
   $("#oxygen").animate({top: "0px", left: "0px"});
   $("#id").animate({top: "0px", left: "0px"});
-  $("#time").animate({top: "0%", left: "50%"});
+  $("#time").animate({top: "0px", left: "50%"});
   $("#microphone").animate({top: "0px", left: "0px"});
 });
 

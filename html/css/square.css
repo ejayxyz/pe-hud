@@ -126,13 +126,13 @@ div .button-left{
   font-family: Kum;
   color:white;
   border:1px solid white;
+  transition:.2s all;
   overflow:hidden;
   font-weight:bold;
   background: rgb(25,120,165);
   background: linear-gradient(90deg, rgba(25,120,165,1) 0%, rgba(5,113,108,1) 100%);
   box-shadow: 0 0 10px 2px var(--neonblue);
   text-shadow: 1px 1px 5px black;
-  transition: all 1.5s;
 }
 
 .button-left:hover{
@@ -141,6 +141,7 @@ div .button-left{
   background: linear-gradient(90deg, rgba(122,32,72,1) 0%, rgba(185,0,39,1) 100%);
   box-shadow: 0 0 10px 2px var(--pinkred);
   text-shadow: 1px 1px 5px black;
+  transition:.2s;
 }
 
 .button-left:after {
@@ -153,14 +154,14 @@ div .button-left{
   margin-left: 0px !important;
   margin-top: -120%;
   opacity: 0;
-  transition: 1.5s;
+  transition: all 0.8s
 }
 
 .button-left:active:after{
   padding: 0;
   margin: 0;
   opacity: 1;
-  transition: 1.5s;
+  transition:0s;
 }
 
 .button-left:focus {
@@ -184,6 +185,7 @@ div .button-right{
   margin-top: 16px;
   margin-bottom:16px;
   margin-left: 5px;
+  transition:.2s;
 }
 
 .button-right{
@@ -205,6 +207,7 @@ div .button-right{
   background: linear-gradient(90deg, rgba(122,32,72,1) 0%, rgba(185,0,39,1) 100%);
   box-shadow: 0 0 10px 2px var(--pinkred);
   text-shadow: 1px 1px 5px black;
+  transition:.2s;
 }
 
 .button-right:after {
@@ -217,14 +220,14 @@ div .button-right{
   margin-left: 0px !important;
   margin-top: -120%;
   opacity: 0;
-  transition: all 0.8s;
+  transition: all 0.8s
 }
 
 .button-right:active:after{
   padding: 0;
   margin: 0;
   opacity: 1;
-  transition: 0s
+  transition:0s;
 }
 
 .button-right:focus {

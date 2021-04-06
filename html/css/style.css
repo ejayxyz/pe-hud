@@ -6,33 +6,35 @@
 
 #main {
   position: absolute;
-  bottom: 90%;
+  bottom: 89%;
   left: 50%;
   margin-right: -50%;
   margin-bottom: -50%;
   transform: translate(-50%, -50%)
 }
 
-#hudsettings {
-  color:white; 
+#title-hud {
+  color:white;
   font-family: Kum; 
-  position:relative; 
-  top:10px;
-  margin-left: 20%;
-  margin-right: 20%;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  order: 2;
 }
 
 #reset {
-  float: right;
-  margin-top: 8px;
-  margin-right: 8px;
   position:relative;
+  order: 1;
+  margin-left: 8px;
+  margin-top: 5px;
 }
 
 #close {
-  margin-top: 8px;
-  float: left; 
+  margin-right: 8px;
   position:relative;
+  order: 3;
+  margin-top: 5px;
 }
 
 .progressplayer {
@@ -49,17 +51,19 @@
 }
 
 #time {
-  position: absolute;
+  top: 0%;
+  width: 10%;
+  border-radius: 10px;
+  text-align: right;
   font-size: 30px;
   font-family: Kum;
-  color:whitesmoke;
-  top: 0%;
+  color:rgb(255, 255, 255);
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
 }
 
-.idnumber {
+#idnumber {
   font-size: 14px;
   font-family: Kum;
   fill: whitesmoke;
@@ -102,9 +106,11 @@
 
 .browser-window-osx .header {
   background: #0a0e1f;
-  height: 3.5vh;
+  display: flex;
+  justify-content: space-between;
   border-radius: 6px 6px 0 0;
-  padding: 0px 0px 0 12px;
+  height: 30px;
+  
 }
 
 #selection {
