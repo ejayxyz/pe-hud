@@ -1,4 +1,4 @@
-local showMap, showBars, isOpen, movieHud = false, false, false, false
+local showMap, showBars, isOpen, movieHud, isPaused = false, false, false, false, false
 local healthActive, shieldActive, staminaActive, oxygenActive, microphoneActive, timeActive, movieActive, idActive = false, false, false, false, false, false, false, false
 local healthSwitch, shieldSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch, timeSwitch, movieSwitch, idSwitch = false, false, false, false, false, false, false, false
 local whisper, normal, scream = 33, 66, 100 
@@ -24,6 +24,109 @@ Citizen.CreateThread(function()
 		if (hours <= 9) then
 			hours = "0" .. hours
 		end
+
+		if IsPauseMenuActive() and not isPaused and not isOpen then
+			if not healthActive then
+				healthActive = true
+				SendNUIMessage({action = 'healthHide'})
+			end
+			if not shieldActive then
+				shieldActive = true
+				SendNUIMessage({action = 'armorHide'})
+			end
+			if not staminaActive then
+				staminaActive = true
+				SendNUIMessage({action = 'staminaHide'})
+			end
+			if oxygenActive then
+				oxygenActive = false
+				SendNUIMessage({action = 'oxygenHide'})
+			end
+			if microphoneActive then
+				microphoneActive = false
+				SendNUIMessage({action = 'microphoneHide'})
+			end
+			if timeActive then
+				timeActive = false
+				SendNUIMessage({action = 'timeHide'})
+			end
+			if idActive then
+				idActive = false
+				SendNUIMessage({action = 'idHide'})
+			end
+			if movieActive then
+				movieActive = false
+				SendNUIMessage({action = 'movieHide'})
+			end
+			isPaused = true
+		elseif not IsPauseMenuActive() and isPaused and not movieHud then
+			if healthActive and not healthSwitch then
+				healthActive = false
+				SendNUIMessage({action = 'healthT'})
+			end
+			if shieldActive and not shieldSwitch then
+				shieldActive = false
+				SendNUIMessage({action = 'armorT'})
+			end
+			if staminaActive and not staminaSwitch then
+				staminaActive = false
+				SendNUIMessage({action = 'staminaT'})
+			end
+			if not oxygenActive and oxygenSwitch then
+				oxygenActive = true
+				SendNUIMessage({action = 'oxygenT'})
+			end
+			if not microphoneActive and microphoneSwitch then
+				microphoneActive = true
+				SendNUIMessage({action = 'microphoneT'})
+			end
+			if not timeActive and timeSwitch then
+				timeActive = true
+				SendNUIMessage({action = 'timeT'})
+			end
+			if not movieActive and movieSwitch then
+				movieActive = true
+				SendNUIMessage({action = 'movieT'})
+			end
+			if not idActive and idSwitch then
+				idActive = true
+				SendNUIMessage({action = 'idT'})
+			end
+			isPaused = false
+		elseif not IsPauseMenuActive() and movieHud and isPaused then
+			if not healthActive then
+				healthActive = true
+				SendNUIMessage({action = 'healthHide'})
+			end
+			if not shieldActive then
+				shieldActive = true
+				SendNUIMessage({action = 'armorHide'})
+			end
+			if not staminaActive then
+				staminaActive = true
+				SendNUIMessage({action = 'staminaHide'})
+			end
+			if oxygenActive then
+				oxygenActive = false
+				SendNUIMessage({action = 'oxygenHide'})
+			end
+			if microphoneActive then
+				microphoneActive = false
+				SendNUIMessage({action = 'microphoneHide'})
+			end
+			if timeActive then
+				timeActive = false
+				SendNUIMessage({action = 'timeHide'})
+			end
+			if idActive then
+				idActive = false
+				SendNUIMessage({action = 'idHide'})
+			end
+			movieActive = true
+			SendNUIMessage({action = 'movieT'})
+			isPaused = false
+		end
+		print(movieHud)
 		SendNUIMessage({
 			action = "hud",
 			health = health,
