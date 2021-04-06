@@ -22,7 +22,8 @@
 }
 
 .jQWCP-wWidget.jQWCP-block {
-	position: relative;
+	display: flex;
+	justify-content: space-evenly;
 	box-shadow: 0 0 10px 2px var(--neonbluecolord);
 }
 

@@ -15,119 +15,28 @@
   background: linear-gradient(90deg, rgba(28,40,83,1) 0%, rgba(18,38,78,1) 25%, rgba(21,46,88,1) 50%, rgba(18,38,78,1) 75%, rgba(28,37,77,1) 100%);
 }
 
-.imageleft {
-  position: relative;
-  margin-top: 5%;
-  top: 17px;
-  left: 5%;
+.test-left {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
-.imageleft2 {
-  position: relative;
-  margin-top: 5%;
-  top: 17px;
-  left: 5%;
+.test-center {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
-.imageleft3 {
-  position: relative;
-  margin-top: 1%;
-  top: 17px;
-  left: 5%;
+.test-right {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
-.buttonleft {
-  position: relative;
-  margin-left: 7%;
-  margin-top: 2%;
-}
-
-.buttonleft2 {
-  position: relative;
-  margin-left: 7%;
-  margin-top: 2%;
-}
-
-.buttonleft3 {
-  position: relative;
-  margin-left: 7%;
-  margin-top: 2%;
-}
-.imagecenter {
-  position: relative;
-  margin-top: 3%;
-  top: 17px;
-  left: 5%;
-  margin-left: 13%;
-}
-.imagecenter2 {
-  position: relative;
-  margin-top: 3%;
-  top: 17px;
-  left: 5%;
-  margin-left: 13%;
-}
-.imagecenter3 {
-  position: relative;
-  margin-top: 3%;
-  top: 17px;
-  left: 5%;
-  margin-left: 13%;
-}
-.buttoncenter {
-  position: relative;
-  margin-left: 7%;
-}
-
-.buttoncenter2 {
-  position: relative;
-  margin-left: 7%;
-}
-
-.buttoncenter3 {
-  position: relative;
-  margin-left: 7%;
-}
-
-.imageright {
-  position: relative;
-  top: 17px;
-  left: 5%;
-  margin-left: 13%;
-}
-
-.imageright2 {
-  position: relative;
-  top: 17px;
-  left: 5%;
-  margin-left: 13%;
-}
-
-.imageright3 {
-  position: relative;
-  top: 17px;
-  left: 5%;
-  margin-left: 13%;
-}
-
-.buttonright {
-  position: relative;
-  margin-top: 2%;
-  margin-left: 7%;
-}
-
-
-.buttonright2 {
-  position: relative;
-  margin-top: 2%;
-  margin-left: 7%;
-}
-
-
-.buttonright3 {
-  position: relative;
-  margin-top: 2%;
-  margin-left: 7%;
+.buttons-center {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8px;
 }
 
 .switch {
@@ -210,6 +119,7 @@ div .button-left{
   margin-left: 16px;
   margin-top: 16px;
   margin-bottom: 16px;
+  margin-right: 5px;
 }
 
 .button-left{
@@ -273,6 +183,7 @@ div .button-right{
   margin-right: 16px;
   margin-top: 16px;
   margin-bottom:16px;
+  margin-left: 5px;
 }
 
 .button-right{

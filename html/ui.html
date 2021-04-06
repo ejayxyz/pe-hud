@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/square.css">
     <style> #movie { display: none;}   </style>
+    <!--<style> #movie, #oxygen, #id, #time, #microphone, #drag-browser { display: none;}   </style>-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="./js/jquery.wheelcolorpicker.js"></script>
@@ -64,11 +65,10 @@
         <image src="img/reset.png" id="reset" height="18" width="18"></image> 
         <image src="img/cross.png" id="close" height="20" width="20" ></image>
         <h3 id="hudsettings" height="10px" width="10px">HUD SETTINGS</h3> 
-        <div class="menu">
-        </div>
       </div>
         <div class="window">
           <div class="background">
+            <div class="test-left">
               <image class="imageleft" src="./img/health.png" alt="Image did not load correctly">
 
               <label class="switch buttonleft" >
@@ -76,21 +76,23 @@
                 <span class="slider round"></span>
               </label>
   
-              <image class="imagecenter" src="./img/armor.png" alt="Image did not load correctly">
+              <image class="imageleft" src="./img/armor.png" alt="Image did not load correctly">
 
-              <label class="switch buttoncenter" >
+              <label class="switch buttonleft" >
                 <input type="checkbox" id="armor-switch" checked>
                 <span class="slider round"></span>
               </label>
 
-              <image class="imageright"  src="./img/stamina.png" alt="Image did not load correctly">
+              <image class="imageleft"  src="./img/stamina.png" alt="Image did not load correctly">
               
-              <label class="switch buttonright" >
+              <label class="switch buttonleft" >
                 <input type="checkbox" id="stamina-switch" checked>
                 <span class="slider round"></span>
-              </label><br>
-
-              <image class="imageleft2" src="./img/map.png" alt="Image did not load correctly">
+              </label>
+            </div>
+            
+            <div class="test-center">
+              <image class="a" src="./img/map.png" alt="Image did not load correctly">
 
               <label class="switch buttonleft2" >
                 <input type="checkbox" id="map-switch" >
@@ -109,9 +111,10 @@
               <label class="switch buttonright2" >
                   <input type="checkbox" id="oxygen-switch">
                   <span class="slider round"></span>
-              </label><br>
-
-              <image class="imageleft3" src="./img/movie.png" alt="Image did not load correctly">
+              </label>
+            </div>
+            <div class="test-right">
+              <image class="a" src="./img/movie.png" alt="Image did not load correctly">
 
               <label class="switch buttonleft3" >
                   <input type="checkbox" id="movie-switch" >
@@ -131,12 +134,14 @@
                 <input type="checkbox" id="microphone-switch" >
                 <span class="slider round"></span>
               </label>
+            </div>
 
-              <div>
-                <button type="button" class="button-left" id="reset-position">Reset position</button>
-                <button type="button" class="button-right" id="reset-color">Reset colors</button>
-              </div>
-              <div>
+            <div class="buttons-center">
+              <button type="button" class="button-left" id="reset-position">Reset position</button>
+              <button type="button" class="button-right" id="reset-color">Reset colors</button>
+            </div>
+
+            <div class="footer-center">
               <select id="selection">
                 <option class="options" value="health-option" selected>Health</option>
                 <option class="options" value="shield-option">Shield</option>
@@ -146,19 +151,9 @@
                 <option class="options" value="id-option">Id</option>
                 <option class="options" value="time-option">Time</option>
               </select>
+
+              <input id="color-block" class="color-block" type="text" value="#ccc" data-wheelcolorpicker="" data-wcp-format="rgba" data-wcp-layout="block" data-wcp-sliders="wsvap" data-wcp-cssclass="color-block" data-wcp-autoresize="true">
             </div>
-              <p> <input id="color-block" type="text" value="#ccc" data-wheelcolorpicker="" data-wcp-format="rgba" data-wcp-layout="block" data-wcp-sliders="wsvap" data-wcp-cssclass="color-block" data-wcp-autoresize="false"> </p>
-            
-              <style type="text/css">
-                .color-block {
-                    max-width: 330px;
-                    width: 100%;
-                    box-sizing: border-box; 
-                    margin-left: 16px;
-                    margin-bottom: 8px;
-                }
-              </style>
-              </div>
             </div>
         </div>
     </div>

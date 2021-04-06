@@ -89,9 +89,11 @@
 .browser-window-osx {
   position: relative;
   box-shadow: 0px 6px 9px 0px rgba(50, 50, 50, 0.11);
+  background: rgb(28,40,83);
+  background: linear-gradient(90deg, rgba(28,40,83,1) 0%, rgba(18,38,78,1) 25%, rgba(21,46,88,1) 50%, rgba(18,38,78,1) 75%, rgba(28,37,77,1) 100%);
   border: 1px solid #c3c3c3;
   border-radius: 5px;
-  background: red;
+  height: 100%;
   width: 30%;
   left: 50%;
   margin-right: -50%;
@@ -100,25 +102,9 @@
 
 .browser-window-osx .header {
   background: #0a0e1f;
-  height: 35px;
+  height: 3.5vh;
   border-radius: 6px 6px 0 0;
   padding: 0px 0px 0 12px;
-}
-
-.browser-window-osx .header .menu {
-  width: 70px;
-  display: inline-block;
-  height: 25px;
-}
-
-
-
-.browser-window-osx .window {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0 0 5px 5px;
-  transform: translate(1)
 }
 
 #selection {
@@ -132,7 +118,6 @@
   float: right;
   width:185px;
   height:30px;
-  margin-right: 14px;
   border-radius: 5px;
   border-color: whitesmoke;
   transition: all 0.1s;
@@ -143,14 +128,11 @@
   overflow: hidden;
 }
 
-.selection select {
-  background: transparent;
-  width: 150px;
-  font-size: 16px;
-  border: 1px solid #CCC;
-  height: 34px;
-}
-
 .options {
   background-color: #0a0e1f;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: space-around;
 }

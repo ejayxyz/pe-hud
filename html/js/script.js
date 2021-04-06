@@ -101,7 +101,7 @@ $("#movie-switch").click(function() {$.post('https://pe-hud/change', JSON.string
 $("#time-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'time'}))})
 $("#microphone-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'microphone'}))})
 $("#close").click(function() {$.post('https://pe-hud/close')})
-$("#reset").click(function() {$("#drag-browser").animate({top: "5vh", left: "32vw"});})
+$("#reset").click(function() {$("#drag-browser").animate({top: "", left: "50%"});})
 
 $("#reset-position").click(function() {
   $("#health").animate({top: "0px", left: "0px"});
