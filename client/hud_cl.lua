@@ -5,18 +5,6 @@ local healthSwitch, shieldSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch,
 local whisper, normal, scream = 33, 66, 100 
 local microphone = normal -- Change this for default
 
-RegisterCommand('health', function()
-	SetEntityHealth(PlayerPedId(), 110)
-end)
-
-RegisterCommand('armor', function()
-	SetPedArmour(PlayerPedId(), 0)
-end)
-
-RegisterCommand('armour', function()
-	SetPedArmour(PlayerPedId(), 25)
-end)
-
 -- Main Thread
 Citizen.CreateThread(function()
 	while true do
