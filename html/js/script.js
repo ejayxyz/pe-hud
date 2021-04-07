@@ -1,3 +1,4 @@
+// This code could be done better. However, I don't feel like re-writing this.
 window.addEventListener("message", function (event) {
   switch (event.data.action) {
     case "show":
@@ -8,6 +9,7 @@ window.addEventListener("message", function (event) {
       $("#drag-browser").fadeOut();
     break;
 
+    // Send Data
     case "hud":
       progressCircle(event.data.health, ".health");
       progressCircle(event.data.armor, ".armor");
@@ -22,6 +24,7 @@ window.addEventListener("message", function (event) {
       progressCircle(event.data.microphone, ".microphone");
     break;
 
+    // Hide elements
     case "healthHide":
       $("#health").fadeOut();
     break;
@@ -53,7 +56,8 @@ window.addEventListener("message", function (event) {
     case "microphoneHide":
       $("#microphone").fadeOut();
     break;
-        
+
+    // Show elements
     case "healthT":
       $("#health").fadeIn();
     break;
@@ -84,6 +88,43 @@ window.addEventListener("message", function (event) {
 
     case "microphoneT":
       $("#microphone").fadeIn();
+    break;
+
+    case "microphoneT":
+      $("#microphone").fadeIn();
+    break;
+
+    // Pulse elements
+    case "healthStart":
+      document.getElementById("health").style.animation = "pulse 1.5s linear infinite";
+    break;
+
+    case "healthStop":
+      document.getElementById("health").style.animation = "none";
+    break;
+
+    case "armorStart":
+      document.getElementById("armor").style.animation = "pulse 1.5s linear infinite";
+    break;
+
+    case "armorStop":
+      document.getElementById("armor").style.animation = "none";
+    break;
+
+    case "staminaStart":
+      document.getElementById("stamina").style.animation = "pulse 1.5s linear infinite";
+    break;
+
+    case "staminaStop":
+      document.getElementById("stamina").style.animation = "none";
+    break;
+
+    case "oxygenStart":
+      document.getElementById("oxygen").style.animation = "pulse 1.5s linear infinite";
+    break;
+    
+    case "oxygenStop":
+      document.getElementById("oxygen").style.animation = "none";
     break;
   }
 });

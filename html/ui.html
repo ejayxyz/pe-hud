@@ -3,7 +3,22 @@
   <head>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/square.css">
-    <style> #drag-browser, #oxygen, #microphone, #id, #time, #movie { display: none;}   </style>
+    <style> #drag-browser, #oxygen, #microphone, #id, #time, #movie { display: none;}
+     @keyframes pulse {
+      0% {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+      }
+      50% {
+         -webkit-transform: scale(0.8);
+         transform: scale(0.8);
+      }
+      100% {
+          -webkit-transform: scale(1);
+         transform: scale(1);
+      }
+      }  
+    </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="./js/jquery.wheelcolorpicker.js"></script>
@@ -25,9 +40,10 @@
     <p id="time">10:20</p>
 
     <div id="main">
+
       <svg class="circle" id="health" width="60" height="60">
         <circle class="progressplayer health" id="health-circle" stroke="#9DE112" stroke-width="4.5" style="stroke-opacity: 1.0" fill="#000000" r="20" cx="24" cy="24" stroke-dasharray="70 30" stroke-dashoffset="0"/>
-        <image href="img/health.png" height="17" width="17" x="16" y="27"></image>
+        <image class="a" href="img/health.png" height="17" width="17" x="16" y="27"></image>
       </svg>
 
       <svg class="circle" id="armor" width="60" height="60">

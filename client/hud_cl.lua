@@ -1,8 +1,21 @@
-local showMap, showBars, isOpen, movieHud, isPaused = false, false, false, false, false
-local healthActive, shieldActive, staminaActive, oxygenActive, microphoneActive, timeActive, movieActive, idActive = false, false, false, false, false, false, false, false
-local healthSwitch, shieldSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch, timeSwitch, movieSwitch, idSwitch = false, false, false, false, false, false, false, false
+local showMap, showBars, showArmor, showOxygen, isOpen, movieHud, isPaused
+local beepHealth, beepShield, beepStamina, beepOxygen
+local healthActive, shieldActive, staminaActive, oxygenActive, microphoneActive, timeActive, movieActive, idActive
+local healthSwitch, shieldSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch, timeSwitch, movieSwitch, idSwitch
 local whisper, normal, scream = 33, 66, 100 
-local microphone = normal
+local microphone = normal -- Change this for default
+
+RegisterCommand('health', function()
+	SetEntityHealth(PlayerPedId(), 110)
+end)
+
+RegisterCommand('armor', function()
+	SetPedArmour(PlayerPedId(), 0)
+end)
+
+RegisterCommand('armour', function()
+	SetPedArmour(PlayerPedId(), 25)
+end)
 
 -- Main Thread
 Citizen.CreateThread(function()
@@ -18,13 +31,68 @@ Citizen.CreateThread(function()
 		else
 			health = GetEntityHealth(PlayerPedId()) - 100
 		end
+		if (oxygen <= 0) then
+			oxygen = 0
+		end
 		if (minutes <= 9) then
 			minutes = "0" .. minutes
 		end
 		if (hours <= 9) then
 			hours = "0" .. hours
 		end
-
+		if Config.ShowArmour then
+			if (armor <= 0) and not isPaused and not shieldSwitch and not movieHud then
+					SendNUIMessage({action = 'armorHide'})
+					shieldActive = true
+					showArmor = true
+			elseif (armor >= 1) and shieldActive and not shieldSwitch and not isPaused and not movieHud then
+				SendNUIMessage({action = 'armorT'})
+				shieldActive = false
+				showArmor = false
+			end
+		end
+		if Config.ShowOxygen then
+			if IsEntityInWater(PlayerPedId()) and not isPaused and oxygenSwitch and not movieHud then
+					SendNUIMessage({action = 'oxygenT'})
+					oxygenActive = true
+					showOxygen = true
+			elseif not IsEntityInWater(PlayerPedId()) and oxygenActive and oxygenSwitch and not isPaused and not movieHud then
+				SendNUIMessage({action = 'oxygenHide'})
+				oxygenActive = false
+				showOxygen = false
+			end
+		end
+		if Config.BeepHud then
+			if (health <= 35) and not (health == 0) and not beepHealth then
+				SendNUIMessage({action = 'healthStart'})
+				beepHealth = true
+			else
+				SendNUIMessage({action = 'healthStop'})
+				beepHealth = false
+			end
+			if (armor <= 35) and not (armor == 0) and not beepShield then
+				SendNUIMessage({action = 'armorStart'})
+				beepShield = true
+			else
+				SendNUIMessage({action = 'armorStop'})
+				beepShield = false
+			end
+			if (stamina <= 35) and not beepStamina then
+				SendNUIMessage({action = 'staminaStart'})
+				beepStamina = true
+			else
+				SendNUIMessage({action = 'staminaStop'})
+				beepStamina = false
+			end
+			if (oxygen <= 35) and not (oxygen == 0) and not beepOxygen then
+				SendNUIMessage({action = 'oxygenStart'})
+				beepOxygen = true
+			else
+				SendNUIMessage({action = 'oxygenStop'})
+				beepOxygen = false
+			end
+		end
+		print(oxygen)
 		if IsPauseMenuActive() and not isPaused and not isOpen then
 			if not healthActive then
 				healthActive = true
@@ -64,7 +132,7 @@ Citizen.CreateThread(function()
 				healthActive = false
 				SendNUIMessage({action = 'healthT'})
 			end
-			if shieldActive and not shieldSwitch then
+			if shieldActive and not shieldSwitch and not showArmor then
 				shieldActive = false
 				SendNUIMessage({action = 'armorT'})
 			end
@@ -72,7 +140,7 @@ Citizen.CreateThread(function()
 				staminaActive = false
 				SendNUIMessage({action = 'staminaT'})
 			end
-			if not oxygenActive and oxygenSwitch then
+			if not oxygenActive and oxygenSwitch and showOxygen then
 				oxygenActive = true
 				SendNUIMessage({action = 'oxygenT'})
 			end
@@ -260,7 +328,7 @@ AddEventHandler('PE:change', function(action)
 				healthActive = false
 				SendNUIMessage({action = 'healthT'})
 			end
-			if shieldActive and not shieldSwitch then
+			if shieldActive and not shieldSwitch and not showArmor then
 				shieldActive = false
 				SendNUIMessage({action = 'armorT'})
 			end
@@ -268,7 +336,7 @@ AddEventHandler('PE:change', function(action)
 				staminaActive = false
 				SendNUIMessage({action = 'staminaT'})
 			end
-			if not oxygenActive and oxygenSwitch then
+			if not oxygenActive and oxygenSwitch and showOxygen then
 				oxygenActive = true
 				SendNUIMessage({action = 'oxygenT'})
 			end
