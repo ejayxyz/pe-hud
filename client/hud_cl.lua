@@ -92,7 +92,6 @@ Citizen.CreateThread(function()
 				beepOxygen = false
 			end
 		end
-		print(oxygen)
 		if IsPauseMenuActive() and not isPaused and not isOpen then
 			if not healthActive then
 				healthActive = true
