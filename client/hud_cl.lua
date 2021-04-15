@@ -5,6 +5,16 @@ local healthSwitch, shieldSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch,
 local whisper, normal, scream = 33, 66, 100 
 local microphone = normal -- Change this for default
 
+RegisterNetEvent("pe-hud:status")
+AddEventHandler("pe-hud:status", function(status)
+    TriggerEvent('esx_status:getStatus', 'hunger', function(status)
+        hunger = status.value / 10000
+    end)
+    TriggerEvent('esx_status:getStatus', 'thirst', function(status)
+        thirst = status.value / 10000
+    end)
+end)
+
 -- Main Thread
 Citizen.CreateThread(function()
 	while true do
@@ -193,6 +203,7 @@ Citizen.CreateThread(function()
 		})
 		Citizen.Wait(420)
 	end
+	print("Hunger: " .. hunger .. "\nThirst: " .. thirst)
 end)
 
 Citizen.CreateThread(function()
