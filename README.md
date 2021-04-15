@@ -1,6 +1,6 @@
 # pe-hud
 
-A very simple standalone HUD with menu that allows for customization
+A very simple standalone HUD with menu that allows for customization. You are not allowed to sell this nor re-distribute it. Contact me my org if you have any questions.
 
 ## Features
  - Color picker
