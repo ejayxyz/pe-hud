@@ -26,7 +26,7 @@ AddEventHandler("pe-hud:status", function(status)
     end)
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
         local health = nil
 		local oxygen = 10 * GetPlayerUnderwaterTimeRemaining(PlayerId())
@@ -251,14 +251,14 @@ Citizen.CreateThread(function()
 			players = players,
 			time = hours .. " : " .. minutes
 		})
-		Citizen.Wait(420)
+		Wait(420)
 	end
 	print("Hunger: " .. hunger .. "\nThirst: " .. thirst)
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while isOpen do
-        Citizen.Wait(100)
+        Wait(100)
         DisableControlAction(0, 322, true)
     end
 end)
