@@ -141,6 +141,14 @@ $(function() {
         $('#armor-circle').css('stroke', color);
       break;
 
+      case "hunger-option":
+        $('#hunger-circle').css('stroke', color);
+      break;
+
+      case "thirst-option":
+        $('#thirst-circle').css('stroke', color);
+      break;
+
       case "stamina-option":
         $('#stamina-circle').css('stroke', color);
       break;
