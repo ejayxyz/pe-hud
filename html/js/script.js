@@ -208,6 +208,8 @@ $(function() {
 
 $("#health-switch").click(function() { $.post('https://pe-hud/change', JSON.stringify({action: 'health'}));})
 $("#armor-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'armor'}));})
+$("#armor-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'hunger'}));})
+$("#hunger-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'thirst'}));})
 $("#stamina-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'stamina'}));})
 $("#oxygen-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'oxygen'}))})
 $("#map-switch").click(function() {$.post('https://pe-hud/change', JSON.stringify({action: 'map'}))})

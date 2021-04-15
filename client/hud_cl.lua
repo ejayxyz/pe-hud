@@ -123,6 +123,14 @@ Citizen.CreateThread(function()
 				shieldActive = true
 				SendNUIMessage({action = 'armorHide'})
 			end
+			if not hungerActive then
+				hungerActive = true
+				SendNUIMessage({action = 'hungerHide'})
+			end
+			if not thirstActive then
+				thirstActive = true
+				SendNUIMessage({action = 'thirstHide'})
+			end
 			if not staminaActive then
 				staminaActive = true
 				SendNUIMessage({action = 'staminaHide'})
@@ -157,6 +165,14 @@ Citizen.CreateThread(function()
 				shieldActive = false
 				SendNUIMessage({action = 'armorT'})
 			end
+			if hungerActive and not hungerSwitch then
+				hungerActive = false
+				SendNUIMessage({action = 'hungerT'})
+			end
+			if thirstActive and not thirstSwitch then
+				thirstActive = false
+				SendNUIMessage({action = 'thirstT'})
+			end
 			if staminaActive and not staminaSwitch then
 				staminaActive = false
 				SendNUIMessage({action = 'staminaT'})
@@ -190,6 +206,14 @@ Citizen.CreateThread(function()
 			if not shieldActive then
 				shieldActive = true
 				SendNUIMessage({action = 'armorHide'})
+			end
+			if not hungerActive then
+				hungerActive = true
+				SendNUIMessage({action = 'hungerHide'})
+			end
+			if not thirstActive then
+				thirstActive = true
+				SendNUIMessage({action = 'thirstHide'})
 			end
 			if not staminaActive then
 				staminaActive = true
