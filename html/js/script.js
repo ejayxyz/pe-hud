@@ -13,6 +13,8 @@ window.addEventListener("message", function (event) {
     case "hud":
       progressCircle(event.data.health, ".health");
       progressCircle(event.data.armor, ".armor");
+      progressCircle(event.data.hunger, ".hunger");
+      progressCircle(event.data.thirst, ".thirst");
       progressCircle(event.data.stamina, ".stamina");
       progressCircle(event.data.oxygen, ".oxygen");
       progressCircle(event.data.players, ".id");
@@ -35,6 +37,14 @@ window.addEventListener("message", function (event) {
     
     case "staminaHide":
       $("#stamina").fadeOut();
+    break;
+
+    case "hungerHide":
+      $("#hunger").fadeOut();
+    break;
+
+    case "thirstHide":
+      $("#thirst").fadeOut();
     break;
     
     case "oxygenHide":
@@ -64,6 +74,14 @@ window.addEventListener("message", function (event) {
 
     case "armorT":
       $("#armor").fadeIn();
+    break;
+
+    case "hungerT":
+      $("#hunger").fadeIn();
+    break;
+
+    case "thirstT":
+      $("#thirst").fadeIn();
     break;
 
     case "staminaT":
@@ -109,6 +127,22 @@ window.addEventListener("message", function (event) {
 
     case "armorStop":
       document.getElementById("armor").style.animation = "none";
+    break;
+
+    case "hungerStart":
+      document.getElementById("hunger").style.animation = "pulse 1.5s linear infinite";
+    break;
+
+    case "hungerStop":
+      document.getElementById("hunger").style.animation = "none";
+    break;
+
+    case "thirstStart":
+      document.getElementById("thirst").style.animation = "pulse 1.5s linear infinite";
+    break;
+
+    case "thirstStop":
+      document.getElementById("thirst").style.animation = "none";
     break;
 
     case "staminaStart":
@@ -187,6 +221,8 @@ $("#reset").click(function() {$("#drag-browser").animate({top: "", left: "50%"})
 $("#reset-position").click(function() {
   $("#health").animate({top: "0px", left: "0px"});
   $("#armor").animate({top: "0px", left: "0px"});
+  $("#hunger").animate({top: "0px", left: "0px"});
+  $("#thirst").animate({top: "0px", left: "0px"});
   $("#stamina").animate({top: "0px", left: "0px"});
   $("#oxygen").animate({top: "0px", left: "0px"});
   $("#id").animate({top: "0px", left: "0px"});
@@ -197,6 +233,8 @@ $("#reset-position").click(function() {
 $("#reset-color").click(function() {
   $('#health-circle').css('stroke', '');
   $('#armor-circle').css('stroke', '');
+  $('#hunger-circle').css('stroke', '');
+  $('#thirst-circle').css('stroke', '');
   $('#stamina-circle').css('stroke', '');
   $('#oxygen-circle').css('stroke', '');
   $('#microphone-circle').css('stroke', '');
