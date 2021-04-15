@@ -1,7 +1,7 @@
 local showMap, showBars, showArmor, showOxygen, isOpen, movieHud, isPaused
-local beepHealth, beepShield, beepStamina, beepOxygen
-local healthActive, shieldActive, staminaActive, oxygenActive, microphoneActive, timeActive, movieActive, idActive
-local healthSwitch, shieldSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch, timeSwitch, movieSwitch, idSwitch
+local beepHealth, beepShield, beepHunger, beepThirst, beepStamina, beepOxygen
+local healthActive, shieldActive, hungerActive, thirstActive, staminaActive, oxygenActive, microphoneActive, timeActive, movieActive, idActive
+local healthSwitch, shieldSwitch, hungerSwitch, thirstSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch, timeSwitch, movieSwitch, idSwitch
 local whisper, normal, scream = 33, 66, 100 
 local microphone = normal -- Change this for default
 
@@ -245,6 +245,26 @@ AddEventHandler('PE:change', function(action)
 			shieldActive = false
 			shieldSwitch = false
 			SendNUIMessage({action = 'armorT'})
+		end
+	elseif action == "hunger" then
+		if not hungerActive then
+			hungerActive = true
+			hungerSwitch = true
+			SendNUIMessage({action = 'hungerHide'})
+		else
+			hungerActive = false
+			hungerSwitch = false
+			SendNUIMessage({action = 'hungerT'})
+		end
+	elseif action == "thirst" then
+		if not thirstActive then
+			thirstActive = true
+			thirstSwitch = true
+			SendNUIMessage({action = 'thirstHide'})
+		else
+			thirstActive = false
+			thirstSwitch = false
+			SendNUIMessage({action = 'thirstT'})
 		end
     elseif action == "stamina" then
 		if not staminaActive then
