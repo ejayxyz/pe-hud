@@ -1,9 +1,20 @@
+ESX = nil
 local showMap, showBars, showArmor, showOxygen, isOpen, movieHud, isPaused
 local beepHealth, beepShield, beepHunger, beepThirst, beepStamina, beepOxygen
 local healthActive, shieldActive, hungerActive, thirstActive, staminaActive, oxygenActive, microphoneActive, timeActive, movieActive, idActive
 local healthSwitch, shieldSwitch, hungerSwitch, thirstSwitch, staminaSwitch, oxygenSwitch, microphoneSwitch, timeSwitch, movieSwitch, idSwitch
 local whisper, normal, scream = 33, 66, 100 
 local microphone = normal -- Change this for default
+
+
+
+-- Main Thread
+CreateThread(function()
+    while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end) 
+		Wait(250)
+	end
+end)
 
 RegisterNetEvent("pe-hud:status")
 AddEventHandler("pe-hud:status", function(status)
@@ -15,7 +26,6 @@ AddEventHandler("pe-hud:status", function(status)
     end)
 end)
 
--- Main Thread
 Citizen.CreateThread(function()
 	while true do
         local health = nil
@@ -74,6 +84,20 @@ Citizen.CreateThread(function()
 			else
 				SendNUIMessage({action = 'armorStop'})
 				beepShield = false
+			end
+			if (hunger <= 35) and not (hunger == 0) and not beepHunger then
+				SendNUIMessage({action = 'hungerStart'})
+				beepHunger = true
+			else
+				SendNUIMessage({action = 'hungerStop'})
+				beepHunger = false
+			end
+			if (thirst <= 35) and not (thirst == 0) and not beepThirst then
+				SendNUIMessage({action = 'thirstStart'})
+				beepThirst = true
+			else
+				SendNUIMessage({action = 'thirstStop'})
+				beepThirst = false
 			end
 			if (stamina <= 35) and not beepStamina then
 				SendNUIMessage({action = 'staminaStart'})
